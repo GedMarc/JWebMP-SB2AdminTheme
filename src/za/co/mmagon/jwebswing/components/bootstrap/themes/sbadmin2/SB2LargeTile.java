@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,9 @@ package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Span;
-import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSRow;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSRow;
 import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanelThemes;
 
@@ -32,6 +33,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanelThemes;
  * @version 1.0
  *
  */
+@ComponentInformation(name = "SB2 Large Tile", description = "A large tile showing a icon, large text, a sub text and a navigation link", url = "https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/index.html")
 public class SB2LargeTile extends Div
 {
 
@@ -57,11 +59,11 @@ public class SB2LargeTile extends Div
     }
 
     /**
-     * @param largeIcon The large icon on the left
-     * @param title The large text on the right
+     * @param largeIcon   The large icon on the left
+     * @param title       The large text on the right
      * @param description The text under the title
-     * @param footer The footer to display
-     * @param thiss Placeholder so I could find the right constructor to link to xD
+     * @param footer      The footer to display
+     * @param thiss       Placeholder so I could find the right constructor to link to xD
      */
     public SB2LargeTile(ComponentHierarchyBase largeIcon, ComponentHierarchyBase title, ComponentHierarchyBase description, ComponentHierarchyBase footer, boolean thiss)
     {
@@ -136,10 +138,10 @@ public class SB2LargeTile extends Div
     }
 
     /**
-     * @param largeIcon The large icon on the left
-     * @param title The large text on the right
+     * @param largeIcon   The large icon on the left
+     * @param title       The large text on the right
      * @param description The text under the title
-     * @param footer The footer to display
+     * @param footer      The footer to display
      */
     public SB2LargeTile(ComponentHierarchyBase largeIcon, String title, ComponentHierarchyBase description, ComponentHierarchyBase footer)
     {
@@ -147,10 +149,10 @@ public class SB2LargeTile extends Div
     }
 
     /**
-     * @param largeIcon The large icon on the left
-     * @param title The large text on the right
+     * @param largeIcon   The large icon on the left
+     * @param title       The large text on the right
      * @param description The text under the title
-     * @param footer The footer to display
+     * @param footer      The footer to display
      */
     public SB2LargeTile(ComponentHierarchyBase largeIcon, String title, String description, ComponentHierarchyBase footer)
     {

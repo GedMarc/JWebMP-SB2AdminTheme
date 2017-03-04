@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,6 +22,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListCSS;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListStyleType;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * A drop down list item for the top nav bar. Comes out as an icon
@@ -32,6 +33,7 @@ import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListStyleType;
  *
  */
 @ListCSS(ListStyleType = ListStyleType.none)
+@ComponentInformation(name = "SB2 Drop Down", description = "A drop down button usable on the navigation bar", url = "https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/index.html")
 public class SB2DropDown extends ListItem
 {
 

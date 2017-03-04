@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2;
 
 import java.util.Date;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * A standard message display format from SB2 Admin Theme
@@ -27,6 +28,7 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
  * @version 1.0
  *
  */
+@ComponentInformation(name = "SB2 Drop Down Alert", description = "A shortcut to generating the alerts drop down", url = "https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/index.html")
 public class SB2DropDownAlert extends JavaScriptPart
 {
 

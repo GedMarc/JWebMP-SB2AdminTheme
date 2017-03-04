@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentClea
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.SB2ThemeClasses;
-import za.co.mmagon.jwebswing.components.moment.Moment;
+import za.co.mmagon.jwebswing.plugins.moment.Moment;
 
 /**
  * A SB2 chat message that is aligned to the left
