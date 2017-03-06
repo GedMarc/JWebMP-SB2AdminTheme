@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -36,8 +36,8 @@ import za.co.mmagon.jwebswing.plugins.PluginInformation;
                    pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-SB2AdminTheme",
                    pluginOriginalHomepage = "https://startbootstrap.com/template-overviews/sb-admin-2/",
                    pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/SB2AdminTheme.jar/download",
-                   pluginIconUrl = "bower_components/startbootstrap-sb-admin-2/icon.png",
-                   pluginIconImageUrl = "bower_components/startbootstrap-sb-admin-2/example.jpg",
+                   pluginIconUrl = "startbootstrap-sb-admin-2/icon.png",
+                   pluginIconImageUrl = "startbootstrap-sb-admin-2/example.jpg",
                    pluginLastUpdatedDate = "2017/03/04"
 )
 public class SB2AdminPageConfigurator extends PageConfigurator
