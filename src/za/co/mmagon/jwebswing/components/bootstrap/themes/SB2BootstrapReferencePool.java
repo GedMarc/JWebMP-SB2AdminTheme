@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,9 +29,9 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
 public enum SB2BootstrapReferencePool implements ReferencePool
 {
 
-    BootstrapSBAdmin2Reference(null, new CSSReference("BSAdmin2Theme", 3.36, "bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css")),
-    BootstrapTimelineReference(null, new CSSReference("BSAdmin2TimelineTheme", 3.36, "bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css")),
-    BootstrapSocialThemeReference(null, new CSSReference("BSSocialTheme", 3.36, "bower_components/bootstrap-social/bootstrap-social.css")),;
+    BootstrapSBAdmin2Reference(null, new CSSReference("BSAdmin2Theme", 3.36, "startbootstrap-sb-admin-2/dist/css/sb-admin-2.css")),
+    BootstrapTimelineReference(null, new CSSReference("BSAdmin2TimelineTheme", 3.36, "startbootstrap-sb-admin-2/dist/css/timeline.css")),
+    BootstrapSocialThemeReference(null, new CSSReference("BSSocialTheme", 3.36, "bootstrap-social/bootstrap-social.css")),;
 
     private SB2BootstrapReferencePool()
     {
