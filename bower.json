@@ -17,6 +17,9 @@
     "tests"
   ],
   "dependencies": {
-	"startbootstrap-sb-admin-2": "git://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git"
+    "startbootstrap-sb-admin-2": "git://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git"
+  },
+  "resolutions": {
+    "font-awesome": "~4.6.3"
   }
 }
