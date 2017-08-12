@@ -27,14 +27,14 @@ import za.co.mmagon.jwebswing.htmlbuilder.css.themes.Theme;
 public class SB2Theme extends Theme
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public SB2Theme()
-    {
-        super("SBAdmin2", "");
-        //default to sb2 admin theme?
-        getCssReferences().add(SB2BootstrapReferencePool.BootstrapSBAdmin2Reference.getCssReference());
-        getCssReferences().add(SB2BootstrapReferencePool.BootstrapSocialThemeReference.getCssReference());
-    }
+	public SB2Theme()
+	{
+		super("SBAdmin2", "");
+		//default to sb2 admin theme?
+		getCssReferences().add(SB2BootstrapReferencePool.BootstrapSBAdmin2Reference.getCssReference());
+		getCssReferences().add(SB2BootstrapReferencePool.BootstrapSocialThemeReference.getCssReference());
+	}
 
 }

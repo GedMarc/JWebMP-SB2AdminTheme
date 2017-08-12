@@ -17,7 +17,10 @@
 package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2;
 
 import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.base.html.*;
+import za.co.mmagon.jwebswing.base.html.Button;
+import za.co.mmagon.jwebswing.base.html.Link;
+import za.co.mmagon.jwebswing.base.html.List;
+import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListCSS;
@@ -28,127 +31,126 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * A drop down list item for the top nav bar. Comes out as an icon
  *
  * @author GedMarc
- * @since Oct 4, 2016
  * @version 1.0
- *
+ * @since Oct 4, 2016
  */
 @ListCSS(ListStyleType = ListStyleType.none)
 @ComponentInformation(name = "SB2 Drop Down", description = "A drop down button usable on the navigation bar", url = "https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/index.html")
 public class SB2DropDown extends ListItem
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private Component dropDownComponent;
-    private List dropDownContents;
+	private Component dropDownComponent;
+	private List dropDownContents;
 
-    public SB2DropDown()
-    {
-        super();
-        addClass(SB2ThemeClasses.DropDown);
-    }
+	public SB2DropDown()
+	{
+		super();
+		addClass(SB2ThemeClasses.DropDown);
+	}
 
-    /**
-     * Returns the drop down component
-     *
-     * @return
-     */
-    public Component getDropDownComponent()
-    {
-        if (dropDownComponent == null)
-        {
-            setDropDownComponent(new Link("#"));
-        }
-        return dropDownComponent;
-    }
+	/**
+	 * Returns the drop down component
+	 *
+	 * @return
+	 */
+	public Component getDropDownComponent()
+	{
+		if (dropDownComponent == null)
+		{
+			setDropDownComponent(new Link("#"));
+		}
+		return dropDownComponent;
+	}
 
-    /**
-     * Sets the drop down component
-     *
-     * @param dropDownComponent
-     */
-    public void setDropDownComponent(Link dropDownComponent)
-    {
-        getChildren().remove(this.dropDownComponent);
-        this.dropDownComponent = dropDownComponent;
-        if (this.dropDownComponent != null)
-        {
-            getChildren().add(this.dropDownComponent);
-            dropDownComponent.addClass(SB2ThemeClasses.DropDown_Toggle);
-            dropDownComponent.addAttribute(LinkAttributes.Data_Toggle, "dropdown");
-            if (dropDownContents != null)
-            {
-                // dropDownComponent.addAttribute(LinkAttributes.Data_Target, dropDownContents.getID(true));
-            }
-        }
-    }
+	/**
+	 * Sets the drop down component
+	 *
+	 * @param dropDownComponent
+	 */
+	public void setDropDownComponent(Button dropDownComponent)
+	{
+		getChildren().remove(this.dropDownComponent);
+		this.dropDownComponent = dropDownComponent;
+		if (this.dropDownComponent != null)
+		{
+			getChildren().add(this.getDropDownComponent());
+			getDropDownComponent().addClass(SB2ThemeClasses.DropDown_Toggle);
+			getDropDownComponent().addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
+			if (getDropDownContents() != null)
+			{
+				//  dropDownComponent.addAttribute(ButtonAttributes.Data_Target, dropDownContents.getID(true));
+			}
+		}
+	}
 
-    /**
-     * Sets the drop down component
-     *
-     * @param dropDownComponent
-     */
-    public void setDropDownComponent(Button dropDownComponent)
-    {
-        getChildren().remove(this.dropDownComponent);
-        this.dropDownComponent = dropDownComponent;
-        if (this.dropDownComponent != null)
-        {
-            getChildren().add(this.getDropDownComponent());
-            getDropDownComponent().addClass(SB2ThemeClasses.DropDown_Toggle);
-            getDropDownComponent().addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
-            if (getDropDownContents() != null)
-            {
-                //  dropDownComponent.addAttribute(ButtonAttributes.Data_Target, dropDownContents.getID(true));
-            }
-        }
-    }
+	/**
+	 * Sets the drop down component
+	 *
+	 * @param dropDownComponent
+	 */
+	public void setDropDownComponent(Link dropDownComponent)
+	{
+		getChildren().remove(this.dropDownComponent);
+		this.dropDownComponent = dropDownComponent;
+		if (this.dropDownComponent != null)
+		{
+			getChildren().add(this.dropDownComponent);
+			dropDownComponent.addClass(SB2ThemeClasses.DropDown_Toggle);
+			dropDownComponent.addAttribute(LinkAttributes.Data_Toggle, "dropdown");
+			if (dropDownContents != null)
+			{
+				// dropDownComponent.addAttribute(LinkAttributes.Data_Target, dropDownContents.getID(true));
+			}
+		}
+	}
 
-    /**
-     * Adds a menu divider
-     *
-     * @return
-     */
-    public ListItem addDivider()
-    {
-        ListItem divider = new ListItem();
-        divider.addClass("divider");
-        getDropDownContents().add(divider);
-        return divider;
-    }
+	/**
+	 * Adds a menu divider
+	 *
+	 * @return
+	 */
+	public ListItem addDivider()
+	{
+		ListItem divider = new ListItem();
+		divider.addClass("divider");
+		getDropDownContents().add(divider);
+		return divider;
+	}
 
-    /**
-     * Sets the drop down contents
-     *
-     * @return
-     */
-    public List getDropDownContents()
-    {
-        if (dropDownContents == null)
-        {
-            setDropDownContents(new List(false));
-        }
-        return dropDownContents;
-    }
+	/**
+	 * Sets the drop down contents
+	 *
+	 * @return
+	 */
+	public List getDropDownContents()
+	{
+		if (dropDownContents == null)
+		{
+			setDropDownContents(new List(false));
+		}
+		return dropDownContents;
+	}
 
-    /**
-     * Sets the drop down contents
-     *
-     * @param dropDownContents
-     */
-    public void setDropDownContents(List dropDownContents)
-    {
-        getChildren().remove(this.dropDownContents);
-        this.dropDownContents = dropDownContents;
-        if (this.dropDownContents != null)
-        {
-            getChildren().add(this.dropDownContents);
-            this.dropDownContents.addClass(SB2ThemeClasses.DropDown_Menu);
-            if (dropDownComponent != null)
-            {
-                //  dropDownComponent.addAttribute(LinkAttributes.Data_Target, dropDownContents.getID(true));
-            }
-        }
-    }
+	/**
+	 * Sets the drop down contents
+	 *
+	 * @param dropDownContents
+	 */
+	public void setDropDownContents(List dropDownContents)
+	{
+		getChildren().remove(this.dropDownContents);
+		this.dropDownContents = dropDownContents;
+		if (this.dropDownContents != null)
+		{
+			getChildren().add(this.dropDownContents);
+			this.dropDownContents.addClass(SB2ThemeClasses.DropDown_Menu);
+			if (dropDownComponent != null)
+			{
+				//  dropDownComponent.addAttribute(LinkAttributes.Data_Target, dropDownContents.getID(true));
+			}
+		}
+	}
 
 }

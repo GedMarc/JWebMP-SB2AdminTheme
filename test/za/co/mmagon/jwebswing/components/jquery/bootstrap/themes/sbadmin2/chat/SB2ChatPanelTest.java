@@ -16,65 +16,64 @@
  */
 package za.co.mmagon.jwebswing.components.jquery.bootstrap.themes.sbadmin2.chat;
 
-import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatLeftMessage;
-import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatPanel;
-import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatRightMessage;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatLeftMessage;
+import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatPanel;
+import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatRightMessage;
 
 /**
- *
  * @author GedMarc
  */
 public class SB2ChatPanelTest extends BaseTestClass
 {
 
-    public SB2ChatPanelTest()
-    {
-    }
+	public SB2ChatPanelTest()
+	{
+	}
 
-    @Test
-    public void testChatLeft()
-    {
-        SB2ChatPanel chatPanel = new SB2ChatPanel();
-        chatPanel.getChatList().add(new SB2ChatLeftMessage());
-        chatPanel.getPanelHeader().add("Text or something");
-        chatPanel.getPanelBody().add("stuff 2");
-        chatPanel.getPanelFooter().add("stuff 3");
-        System.out.println(chatPanel.toString(true));
-    }
+	@Test
+	public void testChatLeft()
+	{
+		SB2ChatPanel chatPanel = new SB2ChatPanel();
+		chatPanel.getChatList().add(new SB2ChatLeftMessage());
+		chatPanel.getPanelHeader().add("Text or something");
+		chatPanel.getPanelBody().add("stuff 2");
+		chatPanel.getPanelFooter().add("stuff 3");
+		System.out.println(chatPanel.toString(true));
+	}
 
-    @Test
-    public void testChatRight()
-    {
-        SB2ChatPanel chatPanel = new SB2ChatPanel();
-        chatPanel.getChatList().add(new SB2ChatRightMessage());
-        chatPanel.getPanelHeader().add("Text or something");
-        chatPanel.getPanelBody().add("stuff 2");
-        chatPanel.getPanelFooter().add("stuff 3");
-        System.out.println(chatPanel.toString(true));
-    }
+	@Test
+	public void testChatRight()
+	{
+		SB2ChatPanel chatPanel = new SB2ChatPanel();
+		chatPanel.getChatList().add(new SB2ChatRightMessage());
+		chatPanel.getPanelHeader().add("Text or something");
+		chatPanel.getPanelBody().add("stuff 2");
+		chatPanel.getPanelFooter().add("stuff 3");
+		System.out.println(chatPanel.toString(true));
+	}
 
-    @Test
-    public void testLink()
-    {
-        SB2ChatPanel chatPanel = new SB2ChatPanel();
-        chatPanel.getPanelHeader().add("Text or something");
-        chatPanel.getPanelBody().add("stuff 2");
-        chatPanel.getPanelFooter().add("stuff 3");
-        System.out.println(chatPanel.toString(true));
-    }
+	@Test
+	public void testLink()
+	{
+		SB2ChatPanel chatPanel = new SB2ChatPanel();
+		chatPanel.getPanelHeader().add("Text or something");
+		chatPanel.getPanelBody().add("stuff 2");
+		chatPanel.getPanelFooter().add("stuff 3");
+		System.out.println(chatPanel.toString(true));
+	}
 
-    @Test
-    public void testDiv()
-    {
-        SB2ChatPanel chatPanel = new SB2ChatPanel();
-        chatPanel.getPanelHeader().add("stuff");
-        chatPanel.getPanelBody().add("stuff 2");
-        chatPanel.setPanelFooter(new Div());
-        chatPanel.getPanelFooter().add("stuff 3");
-        System.out.println(chatPanel.toString(true));
-    }
+	@Test
+	public void testDiv()
+	{
+		SB2ChatPanel chatPanel = new SB2ChatPanel();
+		chatPanel.getPanelHeader().add("stuff");
+		chatPanel.getPanelBody().add("stuff 2");
+		chatPanel.setPanelFooter(new Div());
+		chatPanel.getPanelFooter().add("stuff 3");
+		System.out.println(chatPanel.toString(true));
+	}
 
 }

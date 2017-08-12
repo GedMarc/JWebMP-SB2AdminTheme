@@ -16,33 +16,33 @@
  */
 package za.co.mmagon.jwebswing.components.jquery.bootstrap.themes.sbadmin2.chat;
 
-import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatLeftMessage;
-import java.util.Date;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatLeftMessage;
+
+import java.util.Date;
 
 /**
- *
  * @author GedMarc
  */
 public class SB2ChatLeftMessageTest extends BaseTestClass
 {
-    
-    public SB2ChatLeftMessageTest()
-    {
-    }
-   
-    /**
-     * Test of preConfigure method, of class SB2ChatLeftMessage.
-     */
-    @Test
-    public void testLeftMessage()
-    {
-        SB2ChatLeftMessage message = new SB2ChatLeftMessage();
-        message.setMessageDate(new Date());
-        System.out.println(message.toString(true));
-        //message.setHeaderText(headerText);
-    }
-
-    
+	
+	public SB2ChatLeftMessageTest()
+	{
+	}
+	
+	/**
+	 * Test of preConfigure method, of class SB2ChatLeftMessage.
+	 */
+	@Test
+	public void testLeftMessage()
+	{
+		SB2ChatLeftMessage message = new SB2ChatLeftMessage();
+		message.setMessageDate(new Date());
+		System.out.println(message.toString(true));
+		//message.setHeaderText(headerText);
+	}
+	
+	
 }

@@ -19,20 +19,18 @@ package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
 /**
- *
  * @author GedMarc
- * @since Oct 11, 2016
  * @version 1.0
- *
+ * @since Oct 11, 2016
  */
 public class SB2ChatMessage extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public SB2ChatMessage()
-    {
+	public SB2ChatMessage()
+	{
 
-    }
+	}
 
 }

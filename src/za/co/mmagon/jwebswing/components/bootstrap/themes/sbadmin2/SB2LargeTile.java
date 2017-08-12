@@ -29,333 +29,334 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanelThemes;
  * The SB Admin 2 Tile
  *
  * @author GedMarc
- * @since Oct 3, 2016
  * @version 1.0
- *
+ * @since Oct 3, 2016
  */
 @ComponentInformation(name = "SB2 Large Tile", description = "A large tile showing a icon, large text, a sub text and a navigation link", url = "https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/index.html")
 public class SB2LargeTile extends Div
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private ComponentHierarchyBase description;
-    private ComponentHierarchyBase footer;
+	private ComponentHierarchyBase description;
+	private ComponentHierarchyBase footer;
 
-    private BSPanel panel;
+	private BSPanel panel;
 
-    private String footerText;
-    private String footerGoIcon;
+	private String footerText;
+	private String footerGoIcon;
 
-    private ComponentHierarchyBase icon;
-    private ComponentHierarchyBase title;
+	private ComponentHierarchyBase icon;
+	private ComponentHierarchyBase title;
 
-    /**
-     * Constructs a new large admin tile
-     */
-    public SB2LargeTile()
-    {
+	/**
+	 * Constructs a new large admin tile
+	 */
+	public SB2LargeTile()
+	{
 
-    }
+	}
 
-    /**
-     * @param largeIcon   The large icon on the left
-     * @param title       The large text on the right
-     * @param description The text under the title
-     * @param footer      The footer to display
-     * @param thiss       Placeholder so I could find the right constructor to link to xD
-     */
-    public SB2LargeTile(ComponentHierarchyBase largeIcon, ComponentHierarchyBase title, ComponentHierarchyBase description, ComponentHierarchyBase footer, boolean thiss)
-    {
-        setIcon(largeIcon);
-        setTitle(title);
-        setDescription(description);
-        setFooter(footer);
+	/**
+	 * @param largeIcon   The large icon on the left
+	 * @param title       The large text on the right
+	 * @param description The text under the title
+	 * @param footer      The footer to display
+	 * @param thiss       Placeholder so I could find the right constructor to link to xD
+	 */
+	public SB2LargeTile(ComponentHierarchyBase largeIcon, ComponentHierarchyBase title, ComponentHierarchyBase description, ComponentHierarchyBase footer, boolean thiss)
+	{
+		setIcon(largeIcon);
+		setTitle(title);
+		setDescription(description);
+		setFooter(footer);
 
-        addClass("col-lg-3 col-md-6");
-    }
+		addClass("col-lg-3 col-md-6");
+	}
 
-    @Override
-    public void preConfigure()
-    {
-        //BSRow.WrapComponent(this);
-        if (!isConfigured())
-        {
-            getPanel().setPanelBody(null); //no body on the large tile
+	/**
+	 * @param largeIcon   The large icon on the left
+	 * @param title       The large text on the right
+	 * @param description The text under the title
+	 * @param footer      The footer to display
+	 */
+	public SB2LargeTile(ComponentHierarchyBase largeIcon, String title, ComponentHierarchyBase description, ComponentHierarchyBase footer)
+	{
+		this(largeIcon, new Div(title), description, footer, true);
+	}
 
-            Div rightSide = new Div();
-            rightSide.addClass("col-xs-9");
+	/**
+	 * @param largeIcon   The large icon on the left
+	 * @param title       The large text on the right
+	 * @param description The text under the title
+	 * @param footer      The footer to display
+	 */
+	public SB2LargeTile(ComponentHierarchyBase largeIcon, String title, String description, ComponentHierarchyBase footer)
+	{
+		this(largeIcon, new Div(title), new Div(description), footer, true);
+	}
 
-            BSRow headerRow = new BSRow();
-            if (this.icon != null)
-            {
-                Div iconDiv = new Div();
-                iconDiv.addClass("col-xs-3");
-                iconDiv.add(this.icon);
-                iconDiv.addClass("pull-left");
-                headerRow.add(iconDiv);
-                //BSRow.WrapComponent(iconDiv);
-            }
+	@Override
+	public void preConfigure()
+	{
+		//BSRow.WrapComponent(this);
+		if (!isConfigured())
+		{
+			getPanel().setPanelBody(null); //no body on the large tile
 
-            if (this.title != null)
-            {
-                Div iconDiv = new Div();
-                iconDiv.addClass("col-xs-12");
-                iconDiv.add(getTitle());
-                iconDiv.addClass("pull-right");
-                getTitle().addClass("huge");
-                rightSide.add(iconDiv);
-            }
+			Div rightSide = new Div();
+			rightSide.addClass("col-xs-9");
 
-            panel.getPanelHeader().add(headerRow);
+			BSRow headerRow = new BSRow();
+			if (this.icon != null)
+			{
+				Div iconDiv = new Div();
+				iconDiv.addClass("col-xs-3");
+				iconDiv.add(this.icon);
+				iconDiv.addClass("pull-left");
+				headerRow.add(iconDiv);
+				//BSRow.WrapComponent(iconDiv);
+			}
 
-            rightSide.add(getDescription());
-            rightSide.addClass(BSComponentDefaultOptions.Text_Right);
+			if (this.title != null)
+			{
+				Div iconDiv = new Div();
+				iconDiv.addClass("col-xs-12");
+				iconDiv.add(getTitle());
+				iconDiv.addClass("pull-right");
+				getTitle().addClass("huge");
+				rightSide.add(iconDiv);
+			}
 
-            headerRow.add(rightSide);
+			panel.getPanelHeader().add(headerRow);
 
-            Span footerTextSpan = new Span();
-            footerTextSpan.setText(footerText);
-            footerTextSpan.addClass("pull-left");
-            Span footerTextIconSpan = new Span();
-            footerTextIconSpan.add(footerGoIcon);
-            footerTextIconSpan.addClass("pull-right");
+			rightSide.add(getDescription());
+			rightSide.addClass(BSComponentDefaultOptions.Text_Right);
 
-            Div footerDiv = new Div();
-            Div clearFix = new Div();
-            clearFix.addClass("clearfix");
+			headerRow.add(rightSide);
 
-            footerDiv.add(footerTextSpan);
-            footerDiv.add(footerTextIconSpan);
-            footerDiv.add(clearFix);
+			Span footerTextSpan = new Span();
+			footerTextSpan.setText(footerText);
+			footerTextSpan.addClass("pull-left");
+			Span footerTextIconSpan = new Span();
+			footerTextIconSpan.add(footerGoIcon);
+			footerTextIconSpan.addClass("pull-right");
 
-            getPanel().getPanelFooter().add(footerDiv);
+			Div footerDiv = new Div();
+			Div clearFix = new Div();
+			clearFix.addClass("clearfix");
 
-            setConfigured(true);
-            add(getPanel());
-        }
-        super.preConfigure();
-    }
+			footerDiv.add(footerTextSpan);
+			footerDiv.add(footerTextIconSpan);
+			footerDiv.add(clearFix);
 
-    /**
-     * @param largeIcon   The large icon on the left
-     * @param title       The large text on the right
-     * @param description The text under the title
-     * @param footer      The footer to display
-     */
-    public SB2LargeTile(ComponentHierarchyBase largeIcon, String title, ComponentHierarchyBase description, ComponentHierarchyBase footer)
-    {
-        this(largeIcon, new Div(title), description, footer, true);
-    }
+			getPanel().getPanelFooter().add(footerDiv);
 
-    /**
-     * @param largeIcon   The large icon on the left
-     * @param title       The large text on the right
-     * @param description The text under the title
-     * @param footer      The footer to display
-     */
-    public SB2LargeTile(ComponentHierarchyBase largeIcon, String title, String description, ComponentHierarchyBase footer)
-    {
-        this(largeIcon, new Div(title), new Div(description), footer, true);
-    }
+			setConfigured(true);
+			add(getPanel());
+		}
+		super.preConfigure();
+	}
 
-    /**
-     * The text under the title
-     *
-     * @return
-     */
-    public ComponentHierarchyBase getDescription()
-    {
-        if (description == null)
-        {
-            setDescription(new Div());
-        }
-        return description;
-    }
+	/**
+	 * The text under the title
+	 *
+	 * @return
+	 */
+	public ComponentHierarchyBase getDescription()
+	{
+		if (description == null)
+		{
+			setDescription(new Div());
+		}
+		return description;
+	}
 
-    /**
-     * The text under the title
-     *
-     * @param description
-     */
-    public final void setDescription(ComponentHierarchyBase description)
-    {
-        this.description = description;
-    }
+	/**
+	 * The text under the title
+	 *
+	 * @param description
+	 */
+	public final void setDescription(ComponentHierarchyBase description)
+	{
+		this.description = description;
+	}
 
-    /**
-     * The text under the title
-     *
-     * @param description
-     * @return
-     */
-    public Div setDescription(String description)
-    {
-        Div descDiv = new Div();
-        descDiv.setText(description);
-        this.description = descDiv;
-        return descDiv;
-    }
+	/**
+	 * The text under the title
+	 *
+	 * @param description
+	 *
+	 * @return
+	 */
+	public Div setDescription(String description)
+	{
+		Div descDiv = new Div();
+		descDiv.setText(description);
+		this.description = descDiv;
+		return descDiv;
+	}
 
-    /**
-     * The footer to display
-     *
-     * @return
-     */
-    public ComponentHierarchyBase getFooter()
-    {
-        if (footer == null)
-        {
-            setFooter(new Div());
-        }
-        return footer;
-    }
+	/**
+	 * The footer to display
+	 *
+	 * @return
+	 */
+	public ComponentHierarchyBase getFooter()
+	{
+		if (footer == null)
+		{
+			setFooter(new Div());
+		}
+		return footer;
+	}
 
-    /**
-     * The footer to display
-     *
-     * @param footer
-     */
-    public final void setFooter(ComponentHierarchyBase footer)
-    {
-        if (footer != null)
-        {
-            footer.addClass("panel-footer");
-        }
-        this.footer = footer;
-    }
+	/**
+	 * The footer to display
+	 *
+	 * @param footer
+	 */
+	public final void setFooter(ComponentHierarchyBase footer)
+	{
+		if (footer != null)
+		{
+			footer.addClass("panel-footer");
+		}
+		this.footer = footer;
+	}
 
-    public BSPanel getPanel()
-    {
-        if (panel == null)
-        {
-            panel = new BSPanel(BSPanelThemes.Default);
-        }
+	public BSPanel getPanel()
+	{
+		if (panel == null)
+		{
+			panel = new BSPanel(BSPanelThemes.Default);
+		}
 
-        return panel;
-    }
+		return panel;
+	}
 
-    public void setPanel(BSPanel panel)
-    {
-        getChildren().remove(this.panel);
-        this.panel = panel;
-        if (this.panel != null)
-        {
-            add(this.panel);
-        }
-    }
+	public void setPanel(BSPanel panel)
+	{
+		getChildren().remove(this.panel);
+		this.panel = panel;
+		if (this.panel != null)
+		{
+			add(this.panel);
+		}
+	}
 
-    /**
-     * Returns the footer text
-     *
-     * @return
-     */
-    public String getFooterText()
-    {
-        return footerText;
-    }
+	/**
+	 * Returns the footer text
+	 *
+	 * @return
+	 */
+	public String getFooterText()
+	{
+		return footerText;
+	}
 
-    /**
-     * The footer text
-     *
-     * @param footerText
-     */
-    public void setFooterText(String footerText)
-    {
-        this.footerText = footerText;
-    }
+	/**
+	 * The footer text
+	 *
+	 * @param footerText
+	 */
+	public void setFooterText(String footerText)
+	{
+		this.footerText = footerText;
+	}
 
-    /**
-     * The icon for the footer go to
-     *
-     * @return
-     */
-    public String getFooterGoIcon()
-    {
-        return footerGoIcon;
-    }
+	/**
+	 * The icon for the footer go to
+	 *
+	 * @return
+	 */
+	public String getFooterGoIcon()
+	{
+		return footerGoIcon;
+	}
 
-    /**
-     * The icon for the footer to go to
-     *
-     * @param footerGoIcon
-     */
-    public void setFooterGoIcon(String footerGoIcon)
-    {
-        this.footerGoIcon = footerGoIcon;
-    }
+	/**
+	 * The icon for the footer to go to
+	 *
+	 * @param footerGoIcon
+	 */
+	public void setFooterGoIcon(String footerGoIcon)
+	{
+		this.footerGoIcon = footerGoIcon;
+	}
 
-    /**
-     * The large icon on the left
-     *
-     * @return
-     */
-    public ComponentHierarchyBase getIcon()
-    {
-        return icon;
-    }
+	/**
+	 * The large icon on the left
+	 *
+	 * @return
+	 */
+	public ComponentHierarchyBase getIcon()
+	{
+		return icon;
+	}
 
-    /**
-     * The large icon on the left
-     *
-     * @param icon
-     */
-    public final void setIcon(ComponentHierarchyBase icon)
-    {
-        this.icon = icon;
-    }
+	/**
+	 * The large icon on the left
+	 *
+	 * @param icon
+	 */
+	public final void setIcon(ComponentHierarchyBase icon)
+	{
+		this.icon = icon;
+	}
 
-    /**
-     * The large icon on the left
-     *
-     * @param largeIcon
-     */
-    public void setLargeIcon(ComponentHierarchyBase largeIcon)
-    {
-        this.icon = largeIcon;
-    }
+	/**
+	 * The large icon on the left
+	 *
+	 * @param largeIcon
+	 */
+	public void setLargeIcon(ComponentHierarchyBase largeIcon)
+	{
+		this.icon = largeIcon;
+	}
 
-    /**
-     * The large text on the right
-     *
-     * @return
-     */
-    public ComponentHierarchyBase getTitle()
-    {
-        if (title == null)
-        {
-            setTitle("");
-        }
-        return title;
-    }
+	/**
+	 * The large text on the right
+	 *
+	 * @return
+	 */
+	public ComponentHierarchyBase getTitle()
+	{
+		if (title == null)
+		{
+			setTitle("");
+		}
+		return title;
+	}
 
-    /**
-     * The large text on the right
-     *
-     * @param title
-     */
-    public final void setTitle(ComponentHierarchyBase title)
-    {
-        this.title = title;
-        if (!(this.title instanceof Div))
-        {
-            Div d = new Div();
-            d.add(title);
-            this.title = d;
-        }
-    }
+	/**
+	 * The large text on the right
+	 *
+	 * @param title
+	 */
+	public final void setTitle(ComponentHierarchyBase title)
+	{
+		this.title = title;
+		if (!(this.title instanceof Div))
+		{
+			Div d = new Div();
+			d.add(title);
+			this.title = d;
+		}
+	}
 
-    /**
-     * Sets the title space of the div
-     *
-     * @param title
-     * @return
-     */
-    public Div setTitle(String title)
-    {
-        Div titleDiv = new Div();
-        titleDiv.setText(title);
-        this.title = titleDiv;
-        return titleDiv;
-    }
+	/**
+	 * Sets the title space of the div
+	 *
+	 * @param title
+	 *
+	 * @return
+	 */
+	public Div setTitle(String title)
+	{
+		Div titleDiv = new Div();
+		titleDiv.setText(title);
+		this.title = titleDiv;
+		return titleDiv;
+	}
 }

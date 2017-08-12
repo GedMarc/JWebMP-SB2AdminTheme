@@ -20,9 +20,10 @@ import za.co.mmagon.jwebswing.base.html.interfaces.children.ListChildren;
 
 /**
  * Defines a component as a valid sb2 chat message
+ *
  * @author GedMarc
  */
 public interface ISB2ChatMessage extends ListChildren
 {
-    
+
 }

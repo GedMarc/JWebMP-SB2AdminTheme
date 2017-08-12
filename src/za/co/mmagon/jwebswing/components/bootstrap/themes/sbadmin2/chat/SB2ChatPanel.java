@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,103 +19,103 @@ package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat;
 import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
-import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanelDefault;
 import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.SB2DropDown;
 import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.SB2ThemeClasses;
+import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanelDefault;
 
 /**
  * The default chat panel that takes chat message types
  *
  * @author GedMarc
- * @since Oct 9, 2016
  * @version 1.0
- *
+ * @since Oct 9, 2016
  */
 public class SB2ChatPanel extends BSPanelDefault
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * The drop down menu in the header bar
-     */
-    private SB2DropDown dropDownMenu;
-    /**
-     * The list of chat messages
-     */
-    private List<ISB2ChatMessage, NoAttributes, GlobalEvents, List> chatList;
+	/**
+	 * The drop down menu in the header bar
+	 */
+	private SB2DropDown dropDownMenu;
+	/**
+	 * The list of chat messages
+	 */
+	private List<ISB2ChatMessage, NoAttributes, GlobalEvents, ? extends List> chatList;
 
-    //private SB2ChatLeftMessage
-    /**
-     * A default sb2 chat panel
-     */
-    public SB2ChatPanel()
-    {
-        addClass(0, SB2ThemeClasses.Chat_Panel);
-    }
+	//private SB2ChatLeftMessage
 
-    /**
-     * A default sb2 chat panel with the given settings
-     *
-     * @param icon The icon
-     * @param title The title
-     */
-    public SB2ChatPanel(String icon, String title)
-    {
-        super(icon, title);
-    }
+	/**
+	 * A default sb2 chat panel
+	 */
+	public SB2ChatPanel()
+	{
+		addClass(0, SB2ThemeClasses.Chat_Panel);
+	}
 
-    /**
-     * Returns the drop down menu attached
-     *
-     * @return
-     */
-    public SB2DropDown getDropDownMenu()
-    {
-        if (dropDownMenu == null)
-        {
-            dropDownMenu = new SB2DropDown();
-        }
-        return dropDownMenu;
-    }
+	/**
+	 * A default sb2 chat panel with the given settings
+	 *
+	 * @param icon  The icon
+	 * @param title The title
+	 */
+	public SB2ChatPanel(String icon, String title)
+	{
+		super(icon, title);
+	}
 
-    /**
-     * Sets the drop down menu attached
-     *
-     * @param dropDownMenu
-     */
-    public void setDropDownMenu(SB2DropDown dropDownMenu)
-    {
-        this.dropDownMenu = dropDownMenu;
-    }
+	/**
+	 * Returns the drop down menu attached
+	 *
+	 * @return
+	 */
+	public SB2DropDown getDropDownMenu()
+	{
+		if (dropDownMenu == null)
+		{
+			dropDownMenu = new SB2DropDown();
+		}
+		return dropDownMenu;
+	}
 
-    /**
-     * Returns the list used to display the chat messages
-     *
-     * @return
-     */
-    public List<ISB2ChatMessage, NoAttributes, GlobalEvents, List> getChatList()
-    {
-        if (chatList == null)
-        {
-            setChatList(new List<>(false));
-        }
-        return chatList;
-    }
+	/**
+	 * Sets the drop down menu attached
+	 *
+	 * @param dropDownMenu
+	 */
+	public void setDropDownMenu(SB2DropDown dropDownMenu)
+	{
+		this.dropDownMenu = dropDownMenu;
+	}
 
-    /**
-     * Sets the list used to display the messages
-     *
-     * @param chatList
-     */
-    public void setChatList(List<ISB2ChatMessage, NoAttributes, GlobalEvents, List> chatList)
-    {
-        remove(this.chatList);
-        this.chatList = chatList;
-        if (this.chatList != null)
-        {
-            this.chatList.addClass(SB2ThemeClasses.Chat);
-            getPanelBody().add(this.chatList);
-        }
-    }
+	/**
+	 * Returns the list used to display the chat messages
+	 *
+	 * @return
+	 */
+	public List<ISB2ChatMessage, NoAttributes, GlobalEvents, ? extends List> getChatList()
+	{
+		if (chatList == null)
+		{
+			setChatList(new List<>(false));
+		}
+		return chatList;
+	}
+
+	/**
+	 * Sets the list used to display the messages
+	 *
+	 * @param chatList
+	 */
+	public void setChatList(List<ISB2ChatMessage, NoAttributes, GlobalEvents, ? extends List> chatList)
+	{
+		remove(this.chatList);
+		this.chatList = chatList;
+		if (this.chatList != null)
+		{
+			this.chatList.addClass(SB2ThemeClasses.Chat);
+			getPanelBody().add(this.chatList);
+		}
+	}
 }

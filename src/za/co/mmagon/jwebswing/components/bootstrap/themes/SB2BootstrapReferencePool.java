@@ -22,59 +22,57 @@ import za.co.mmagon.jwebswing.base.servlets.enumarations.RequirementsPriority;
 import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
 
 /**
- *
  * @author GedMarc
  * @since 20 Apr 2016
  */
 public enum SB2BootstrapReferencePool implements ReferencePool
 {
 
-    BootstrapSBAdmin2Reference(null, new CSSReference("BSAdmin2Theme", 3.36, "startbootstrap-sb-admin-2/dist/css/sb-admin-2.css")),
-    BootstrapTimelineReference(null, new CSSReference("BSAdmin2TimelineTheme", 3.36, "startbootstrap-sb-admin-2/dist/css/timeline.css")),
-    BootstrapSocialThemeReference(null, new CSSReference("BSSocialTheme", 3.36, "bootstrap-social/bootstrap-social.css")),;
+	BootstrapSBAdmin2Reference(null, new CSSReference("BSAdmin2Theme", 3.36, "startbootstrap-sb-admin-2/dist/css/sb-admin-2.css")),
+	BootstrapTimelineReference(null, new CSSReference("BSAdmin2TimelineTheme", 3.36, "startbootstrap-sb-admin-2/dist/css/timeline.css")),
+	BootstrapSocialThemeReference(null, new CSSReference("BSSocialTheme", 3.36, "bootstrap-social/bootstrap-social.css")),;
 
-    private SB2BootstrapReferencePool()
-    {
-    }
+	private JavascriptReference javaScriptReference;
+	private CSSReference cssReference;
+	private SB2BootstrapReferencePool()
+	{
+	}
 
-    private JavascriptReference javaScriptReference;
-    private CSSReference cssReference;
+	private SB2BootstrapReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+		if (this.javaScriptReference != null)
+		{
+			this.javaScriptReference.setPriority(RequirementsPriority.Third);
+		}
+		this.cssReference = cssReference;
+		if (this.cssReference != null)
+		{
+			this.cssReference.setPriority(RequirementsPriority.Third);
+		}
+	}
 
-    private SB2BootstrapReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-        if (this.javaScriptReference != null)
-        {
-            this.javaScriptReference.setPriority(RequirementsPriority.Third);
-        }
-        this.cssReference = cssReference;
-        if (this.cssReference != null)
-        {
-            this.cssReference.setPriority(RequirementsPriority.Third);
-        }
-    }
+	@Override
+	public JavascriptReference getJavaScriptReference()
+	{
+		return javaScriptReference;
+	}
 
-    @Override
-    public JavascriptReference getJavaScriptReference()
-    {
-        return javaScriptReference;
-    }
+	@Override
+	public void setJavaScriptReference(JavascriptReference javaScriptReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+	}
 
-    @Override
-    public void setJavaScriptReference(JavascriptReference javaScriptReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-    }
+	@Override
+	public CSSReference getCssReference()
+	{
+		return cssReference;
+	}
 
-    @Override
-    public CSSReference getCssReference()
-    {
-        return cssReference;
-    }
-
-    @Override
-    public void setCssReference(CSSReference cssReference)
-    {
-        this.cssReference = cssReference;
-    }
+	@Override
+	public void setCssReference(CSSReference cssReference)
+	{
+		this.cssReference = cssReference;
+	}
 }

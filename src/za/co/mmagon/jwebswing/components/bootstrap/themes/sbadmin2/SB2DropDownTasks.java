@@ -16,134 +16,131 @@
  */
 package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2;
 
+import za.co.mmagon.jwebswing.base.html.*;
+import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.BSProgressBar;
+import za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar.BSProgressBarThemes;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import za.co.mmagon.jwebswing.base.html.Bold;
-import za.co.mmagon.jwebswing.base.html.Div;
-import za.co.mmagon.jwebswing.base.html.Link;
-import za.co.mmagon.jwebswing.base.html.ListItem;
-import za.co.mmagon.jwebswing.base.html.Paragraph;
-import za.co.mmagon.jwebswing.base.html.Span;
-import za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.BSProgressBar;
-import za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar.BSProgressBarThemes;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
 /**
  * A shortcut class to building drop down message types
  *
  * @author GedMarc
- * @since Oct 4, 2016
  * @version 1.0
- *
+ * @since Oct 4, 2016
  */
 public class SB2DropDownTasks extends SB2DropDown
 {
-
-    private static final long serialVersionUID = 1L;
-
-    private ArrayList<SB2DropDownTask> messages;
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            messages.stream().map((message)
-                    -> 
-                    {
-                        ListItem li = new ListItem();
-                        Link link = new Link("#");
-                        Div container = new Div();
-                        Paragraph topSection = new Paragraph();
-                        Span span = new Span();
-                        span.addClass("pull-right");
-                        span.addClass("text-muted");
-                        span.setText(message.getPercentage() + "% Complete");
-                        
-                        topSection.add(new Bold(message.getName()));
-                        topSection.add(span);
-                        
-                        BSProgressBar progressBar = new BSProgressBar(true);
-                        progressBar.getProgressBar().setMin(0);
-                        progressBar.getProgressBar().setMax(100);
-                        progressBar.getProgressBar().setValue(message.getPercentage());
-                        progressBar.getProgressBar().setLabel("" + message.getPercentage() + " % Complete");
-                        progressBar.setActive(true);
-                        progressBar.getProgressBar().setTheme(BSProgressBarThemes.valueOf(message.getData()));
-                        //progressBar.add(message.getMessage());
-                        
-                        container.add(topSection);
-                        container.add(progressBar);
-                        li.add(link);
-                        link.add(container);
-                        
-                        return li;
-            }).forEach((li)
-                    -> 
-                    {
-                        getDropDownContents().add(li);
-                        addDivider();
-            });
-        }
-        super.preConfigure();
-    }
-
-    /**
-     * Construct a new sb admin 2 dropdown formatted as messages
-     */
-    public SB2DropDownTasks()
-    {
-        this(null);
-    }
-
-    /**
-     * Construct a new sb admin 2 dropdown formatted as messages
-     *
-     * @param messages
-     */
-    public SB2DropDownTasks(ArrayList<SB2DropDownTask> messages)
-    {
-        this.messages = messages;
-        getDropDownContents().addClass(SB2ThemeClasses.DropDown_Tasks);
-    }
-
-    /**
-     * Returns the current messages
-     *
-     * @return
-     */
-    public ArrayList<SB2DropDownTask> getMessages()
-    {
-        if (messages == null)
-        {
-            messages = new ArrayList<>();
-        }
-        return messages;
-    }
-
-    /**
-     * Sets the current messages array list
-     *
-     * @param messages
-     */
-    public void setMessages(ArrayList<SB2DropDownTask> messages)
-    {
-        this.messages = messages;
-    }
-
-    /**
-     * Read from a URL
-     * 
-     * @param content
-     * @return
-     * @throws IOException
-     */
-    public static SB2DropDownTasks fromUrl(URL content) throws IOException
-    {
-        ArrayList list2 = JavaScriptPart.FromToList(content, SB2DropDownTask[].class);
-        SB2DropDownTasks messages = new SB2DropDownTasks(list2);
-        messages.preConfigure();
-        return messages;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	private ArrayList<SB2DropDownTask> messages;
+	
+	/**
+	 * Construct a new sb admin 2 dropdown formatted as messages
+	 */
+	public SB2DropDownTasks()
+	{
+		this(null);
+	}
+	
+	/**
+	 * Construct a new sb admin 2 dropdown formatted as messages
+	 *
+	 * @param messages
+	 */
+	public SB2DropDownTasks(ArrayList<SB2DropDownTask> messages)
+	{
+		this.messages = messages;
+		getDropDownContents().addClass(SB2ThemeClasses.DropDown_Tasks);
+	}
+	
+	/**
+	 * Read from a URL
+	 *
+	 * @param content
+	 *
+	 * @return
+	 *
+	 * @throws IOException
+	 */
+	public static SB2DropDownTasks fromUrl(URL content) throws IOException
+	{
+		ArrayList list2 = JavaScriptPart.FromToList(content, SB2DropDownTask[].class);
+		SB2DropDownTasks messages = new SB2DropDownTasks(list2);
+		messages.preConfigure();
+		return messages;
+	}
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			messages.stream().map((message)
+					                      ->
+			                      {
+				                      ListItem li = new ListItem();
+				                      Link link = new Link("#");
+				                      Div container = new Div();
+				                      Paragraph topSection = new Paragraph();
+				                      Span span = new Span();
+				                      span.addClass("pull-right");
+				                      span.addClass("text-muted");
+				                      span.setText(message.getPercentage() + "% Complete");
+				
+				                      topSection.add(new Bold(message.getName()));
+				                      topSection.add(span);
+				
+				                      BSProgressBar progressBar = new BSProgressBar(true);
+				                      progressBar.getProgressBar().setMin(0);
+				                      progressBar.getProgressBar().setMax(100);
+				                      progressBar.getProgressBar().setValue(message.getPercentage());
+				                      progressBar.getProgressBar().setLabel("" + message.getPercentage() + " % Complete");
+				                      progressBar.setActive(true);
+				                      progressBar.getProgressBar().setTheme(BSProgressBarThemes.valueOf(message.getData()));
+				                      //progressBar.add(message.getMessage());
+				
+				                      container.add(topSection);
+				                      container.add(progressBar);
+				                      li.add(link);
+				                      link.add(container);
+				
+				                      return li;
+			                      }).forEach((li)
+					                                 ->
+			                                 {
+				                                 getDropDownContents().add(li);
+				                                 addDivider();
+			                                 });
+		}
+		super.preConfigure();
+	}
+	
+	/**
+	 * Returns the current messages
+	 *
+	 * @return
+	 */
+	public ArrayList<SB2DropDownTask> getMessages()
+	{
+		if (messages == null)
+		{
+			messages = new ArrayList<>();
+		}
+		return messages;
+	}
+	
+	/**
+	 * Sets the current messages array list
+	 *
+	 * @param messages
+	 */
+	public void setMessages(ArrayList<SB2DropDownTask> messages)
+	{
+		this.messages = messages;
+	}
 }
