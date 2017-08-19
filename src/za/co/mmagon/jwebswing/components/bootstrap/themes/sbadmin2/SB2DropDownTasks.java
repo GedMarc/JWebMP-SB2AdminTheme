@@ -69,7 +69,7 @@ public class SB2DropDownTasks extends SB2DropDown
 	 */
 	public static SB2DropDownTasks fromUrl(URL content) throws IOException
 	{
-		ArrayList list2 = JavaScriptPart.FromToList(content, SB2DropDownTask[].class);
+		ArrayList list2 = new JavaScriptPart().FromToList(content, SB2DropDownTask[].class);
 		SB2DropDownTasks messages = new SB2DropDownTasks(list2);
 		messages.preConfigure();
 		return messages;
