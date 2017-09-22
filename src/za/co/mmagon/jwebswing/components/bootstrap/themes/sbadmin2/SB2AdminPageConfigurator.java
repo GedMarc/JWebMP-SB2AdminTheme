@@ -41,13 +41,13 @@ import za.co.mmagon.jwebswing.plugins.PluginInformation;
 )
 public class SB2AdminPageConfigurator extends PageConfigurator
 {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	@Override
 	public Page configure(Page page)
 	{
 		return page;
 	}
-
+	
 }

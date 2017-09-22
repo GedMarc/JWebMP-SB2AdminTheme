@@ -34,11 +34,12 @@ public enum SB2BootstrapReferencePool implements ReferencePool
 
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;
-	private SB2BootstrapReferencePool()
+	
+	SB2BootstrapReferencePool()
 	{
 	}
-
-	private SB2BootstrapReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	
+	SB2BootstrapReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
 		if (this.javaScriptReference != null)

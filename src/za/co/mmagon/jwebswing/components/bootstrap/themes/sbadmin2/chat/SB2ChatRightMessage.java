@@ -58,6 +58,7 @@ public class SB2ChatRightMessage extends ListItem implements ISB2ChatMessage
 	private Div chatBody;
 	@JsonIgnore
 	private Div chatBodyHeader;
+	
 	/**
 	 * A Chat message that is left aligned
 	 */
