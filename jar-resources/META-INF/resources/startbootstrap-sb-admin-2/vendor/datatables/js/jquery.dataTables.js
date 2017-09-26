@@ -55,7 +55,7 @@
         // Browser
         factory(jQuery, window, document);
     }
-}
+};
 (function ($, window, document, undefined) {
     "use strict";
 
@@ -5986,7 +5986,7 @@
 
 
     /**
-     * Attempt to load a saved table state
+     * Attempt to load a 
      *  @param {object} oSettings dataTables settings object
      *  @param {object} oInit DataTables init object so we can override settings
      *  @memberof DataTable#oApi
@@ -6004,7 +6004,7 @@
             return;
         }
 
-        /* Allow custom and plug-in manipulation functions to alter the saved data set and
+        /* Allow custom and plug-in manipulation functions to alter the 
 		 * cancelling of loading by returning false
 		 */
         var abStateLoad = _fnCallbackFire(settings, 'aoStateLoadParams', 'stateLoadParams', [settings, state]);
@@ -6023,7 +6023,7 @@
             return;
         }
 
-        // Store the saved state so it might be accessed at any time
+        // Store the 
         settings.oLoadedState = $.extend(true, {}, state);
 
         // Restore key features - todo - for 1.11 this needs to be done by
@@ -10547,9 +10547,9 @@
 
 
         /**
-         * Callback which allows modification of the saved state prior to loading that state.
+         * Callback which allows modification of the 
          * This callback is called when the table is loading state from the stored data, but
-         * prior to the settings object being modified by the saved state. Note that for
+         * prior to the settings object being modified by the 
          * plug-in authors, you should use the `stateLoadParams` event to load parameters for
          * a plug-in.
          *  @type function
@@ -10560,7 +10560,7 @@
          *  @name DataTable.defaults.stateLoadParams
          *
          *  @example
-         *    // Remove a saved filter, so filtering is never loaded
+         *    // Remove a 
          *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
 		 *        "stateSave": true,
@@ -10600,7 +10600,7 @@
 		 *      $('#example').dataTable( {
 		 *        "stateSave": true,
 		 *        "stateLoaded": function (settings, data) {
-		 *          alert( 'Saved filter was: '+data.oSearch.sSearch );
+		 *          alert( '
 		 *        }
 		 *      } );
 		 *    } );
@@ -10662,7 +10662,7 @@
          *  @name DataTable.defaults.stateSaveParams
          *
          *  @example
-         *    // Remove a saved filter, so filtering is never saved
+         *    // Remove a 
          *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
 		 *        "stateSave": true,
@@ -10676,7 +10676,7 @@
 
 
         /**
-         * Duration for which the saved state information is considered valid. After this period
+         * Duration for which the 
          * has elapsed the state will be returned to the default.
          * Value is given in seconds.
          *  @type int
@@ -12931,7 +12931,7 @@
         "aoStateLoadParams": [],
 
         /**
-         * Callbacks for operating on the settings object once the saved state has been
+         * Callbacks for operating on the settings object once the 
          * loaded
          *  @type array
          *  @default []
@@ -14791,14 +14791,14 @@
 
     /**
      * State load event, fired when the table is loading state from the stored
-     * data, but prior to the settings object being modified by the saved state
-     * - allowing modification of the saved state is required or loading of
+     * data, but prior to the settings object being modified by the
+     * - allowing modification of the 
      * state for a plug-in.
      *  @name DataTable#stateLoadParams.dt
      *  @event
      *  @param {event} e jQuery event object
      *  @param {object} oSettings DataTables settings object
-     *  @param {object} json The saved state information
+     *  @param {object} json The 
      */
 
     /**
@@ -14808,7 +14808,7 @@
      *  @event
      *  @param {event} e jQuery event object
      *  @param {object} oSettings DataTables settings object
-     *  @param {object} json The saved state information
+     *  @param {object} json The 
      */
 
     /**
