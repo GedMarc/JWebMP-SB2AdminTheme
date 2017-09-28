@@ -16,8 +16,8 @@
  */
 package za.co.mmagon.jwebswing.components.jquery.bootstrap.themes;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.base.html.Body;
@@ -45,7 +45,7 @@ public class SBAdmin2ThemeTest extends BaseTestClass
 		b.addTheme(theme);
 
 		System.out.println(p.toString(true));
-		Assert.assertEquals("<!DOCTYPE html>\n"
+		Assertions.assertEquals("<!DOCTYPE html>\n"
 				                    + "<html>\n"
 				                    + "	<head>\n"
 				                    + "		<link href=\"bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css\" rel=\"stylesheet\" type=\"text/css\">\n"
@@ -71,7 +71,7 @@ public class SBAdmin2ThemeTest extends BaseTestClass
 		pa.addTheme(theme);
 
 		System.out.println(p.toString(true));
-		Assert.assertEquals("<!DOCTYPE html>\n"
+		Assertions.assertEquals("<!DOCTYPE html>\n"
 				                    + "<html>\n"
 				                    + "	<head>\n"
 				                    + "		<link href=\"bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css\" rel=\"stylesheet\" type=\"text/css\">\n"
