@@ -17,7 +17,7 @@
 package za.co.mmagon.jwebswing.components.jquery.bootstrap.themes.sbadmin2.chat;
 
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatLeftMessage;
 import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.chat.SB2ChatPanel;
