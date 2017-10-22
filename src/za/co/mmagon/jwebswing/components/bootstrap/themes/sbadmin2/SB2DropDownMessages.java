@@ -29,6 +29,7 @@ import za.co.mmagon.jwebswing.plugins.moment.Moment;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A shortcut class to building drop down message types
@@ -39,11 +40,11 @@ import java.util.ArrayList;
  */
 public class SB2DropDownMessages extends SB2DropDown
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
-	private ArrayList<SB2DropDownMessage> messages;
-	
+
+	private List<SB2DropDownMessage> messages;
+
 	/**
 	 * Construct a new sb admin 2 dropdown formatted as messages
 	 */
@@ -51,18 +52,18 @@ public class SB2DropDownMessages extends SB2DropDown
 	{
 		this(null);
 	}
-	
+
 	/**
 	 * Construct a new sb admin 2 dropdown formatted as messages
 	 *
 	 * @param messages
 	 */
-	public SB2DropDownMessages(ArrayList<SB2DropDownMessage> messages)
+	public SB2DropDownMessages(List<SB2DropDownMessage> messages)
 	{
 		this.messages = messages;
 		getDropDownContents().addClass(SB2ThemeClasses.DropDown_Messages);
 	}
-	
+
 	/**
 	 * Read from a URL
 	 *
@@ -79,46 +80,41 @@ public class SB2DropDownMessages extends SB2DropDown
 		messages.preConfigure();
 		return messages;
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
 		if (!isConfigured())
 		{
-			messages.stream().map((message)
-					                      ->
+			getMessages().forEach(message ->
 			                      {
 				                      ListItem li = new ListItem();
 				                      Link link = new Link("#");
 				                      Div topSection = new Div();
 				                      Moment date = new Moment(message.getDate(), ComponentTypes.Span);
-				
+
 				                      date.addClass(BSComponentDefaultOptions.Pull_Right);
 				                      date.addClass(BSComponentColoursOptions.Text_Muted);
 				                      topSection.add(new Bold(message.getName()));
 				                      topSection.add(date);
-				
+
 				                      Div messageSection = new Div();
 				                      messageSection.add(message.getMessage());
 				                      li.add(link);
 				                      link.add(topSection);
 				                      link.add(messageSection);
-				                      return li;
-			                      }).forEach((li)
-					                                 ->
-			                                 {
-				                                 getDropDownContents().add(li);
-			                                 });
+				                      getDropDownContents().add(li);
+			                      });
 		}
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Returns the current messages
 	 *
 	 * @return
 	 */
-	public ArrayList<SB2DropDownMessage> getMessages()
+	public List<SB2DropDownMessage> getMessages()
 	{
 		if (messages == null)
 		{
@@ -126,13 +122,13 @@ public class SB2DropDownMessages extends SB2DropDown
 		}
 		return messages;
 	}
-	
+
 	/**
 	 * Sets the current messages array list
 	 *
 	 * @param messages
 	 */
-	public void setMessages(ArrayList<SB2DropDownMessage> messages)
+	public void setMessages(List<SB2DropDownMessage> messages)
 	{
 		this.messages = messages;
 	}

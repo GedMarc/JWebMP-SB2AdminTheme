@@ -30,7 +30,7 @@ public class SB2ChatMessage extends JavaScriptPart
 
 	public SB2ChatMessage()
 	{
-
+		//Nothing Needed
 	}
 
 }

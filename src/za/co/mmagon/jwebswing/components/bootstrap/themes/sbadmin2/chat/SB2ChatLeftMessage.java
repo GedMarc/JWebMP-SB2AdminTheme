@@ -36,20 +36,20 @@ import java.util.Date;
  */
 public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The actual header text
 	 */
-	public String headerText;
+	private String headerText;
 	/**
 	 * The date for the message
 	 */
-	public Date messageDate;
+	private Date messageDate;
 	/**
 	 * The actual message
 	 */
-	public String message;
+	private String message;
 	@JsonIgnore
 	private Span messageImageSpan;
 	@JsonIgnore
@@ -58,7 +58,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 	private Div chatBody;
 	@JsonIgnore
 	private Div chatBodyHeader;
-	
+
 	/**
 	 * A Chat message that is left aligned
 	 */
@@ -75,28 +75,27 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 		{
 			getMessageImageSpan().add(getMessageImage());
 			add(getMessageImageSpan());
-			
+
 			Strong headerStrong = new Strong(headerText);
 			headerStrong.addClass(BSComponentDefaultOptions.Primary_Font);
-			
+
 			getChatBodyHeader().add(headerStrong);
 			SmallText st = new SmallText();
 			Moment m = new Moment(messageDate, ComponentTypes.Span);
 			st.addClass(BSComponentDefaultOptions.Pull_Right);
 			st.addClass(BSComponentColoursOptions.Text_Muted);
 			st.add(m);
-			
+
 			getChatBodyHeader().add(st);
-			
-			//getChatBody().add(getChatBodyHeader());
+
 			getChatBody().add(message);
-			
+
 			add(getChatBody());
 		}
-		
+
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Returns this message image
 	 *
@@ -110,7 +109,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 		}
 		return messageImage;
 	}
-	
+
 	/**
 	 * Sets the image for the message
 	 *
@@ -124,7 +123,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 			this.messageImage.addClass(BSComponentDefaultOptions.Img_Circle);
 		}
 	}
-	
+
 	/**
 	 * Returns the container span for the message image
 	 *
@@ -138,7 +137,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 		}
 		return messageImageSpan;
 	}
-	
+
 	/**
 	 * Sets the container span for the message image
 	 *
@@ -153,7 +152,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 			this.messageImageSpan.addClass(BSComponentDefaultOptions.Pull_Left);
 		}
 	}
-	
+
 	/**
 	 * Gets the text for the header
 	 *
@@ -163,7 +162,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 	{
 		return headerText;
 	}
-	
+
 	/**
 	 * Sets the text for the header
 	 *
@@ -173,7 +172,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 	{
 		this.headerText = headerText;
 	}
-	
+
 	/**
 	 * Returns the assigned message ate
 	 *
@@ -183,7 +182,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 	{
 		return messageDate;
 	}
-	
+
 	/**
 	 * Sets the assigned message date
 	 *
@@ -193,7 +192,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 	{
 		this.messageDate = messageDate;
 	}
-	
+
 	/**
 	 * Returns the message
 	 *
@@ -203,7 +202,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 	{
 		return message;
 	}
-	
+
 	/**
 	 * Sets the message
 	 *
@@ -213,7 +212,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 	{
 		this.message = message;
 	}
-	
+
 	/**
 	 * Returns the given chat body
 	 *
@@ -227,7 +226,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 		}
 		return chatBody;
 	}
-	
+
 	/**
 	 * Sets the given chat body
 	 *
@@ -242,7 +241,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 			this.chatBody.addClass(BSComponentClearfixOptions.Clearfix);
 		}
 	}
-	
+
 	/**
 	 * Returns the div that contains the body header
 	 *
@@ -256,7 +255,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 		}
 		return chatBodyHeader;
 	}
-	
+
 	/**
 	 * Sets the chat body header
 	 *
@@ -270,5 +269,64 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 			this.chatBodyHeader.addClass("header");
 			getChatBody().add(this.chatBodyHeader);
 		}
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof SB2ChatLeftMessage))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		SB2ChatLeftMessage that = (SB2ChatLeftMessage) o;
+
+		if (getHeaderText() != null ? !getHeaderText().equals(that.getHeaderText()) : that.getHeaderText() != null)
+		{
+			return false;
+		}
+		if (getMessageDate() != null ? !getMessageDate().equals(that.getMessageDate()) : that.getMessageDate() != null)
+		{
+			return false;
+		}
+		if (getMessage() != null ? !getMessage().equals(that.getMessage()) : that.getMessage() != null)
+		{
+			return false;
+		}
+		if (getMessageImageSpan() != null ? !getMessageImageSpan().equals(that.getMessageImageSpan()) : that.getMessageImageSpan() != null)
+		{
+			return false;
+		}
+		if (getMessageImage() != null ? !getMessageImage().equals(that.getMessageImage()) : that.getMessageImage() != null)
+		{
+			return false;
+		}
+		if (!getChatBody().equals(that.getChatBody()))
+		{
+			return false;
+		}
+		return getChatBodyHeader().equals(that.getChatBodyHeader());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getHeaderText() != null ? getHeaderText().hashCode() : 0);
+		result = 31 * result + (getMessageDate() != null ? getMessageDate().hashCode() : 0);
+		result = 31 * result + (getMessage() != null ? getMessage().hashCode() : 0);
+		result = 31 * result + (getMessageImageSpan() != null ? getMessageImageSpan().hashCode() : 0);
+		result = 31 * result + (getMessageImage() != null ? getMessageImage().hashCode() : 0);
+		result = 31 * result + getChatBody().hashCode();
+		result = 31 * result + getChatBodyHeader().hashCode();
+		return result;
 	}
 }

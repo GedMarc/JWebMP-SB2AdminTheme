@@ -41,15 +41,15 @@ public class SB2ChatRightMessage extends ListItem implements ISB2ChatMessage
 	/**
 	 * The actual header text
 	 */
-	public String headerText;
+	private String headerText;
 	/**
 	 * The date for the message
 	 */
-	public Date messageDate;
+	private Date messageDate;
 	/**
 	 * The actual message
 	 */
-	public String message;
+	private String message;
 	@JsonIgnore
 	private Span messageImageSpan;
 	@JsonIgnore
@@ -58,7 +58,7 @@ public class SB2ChatRightMessage extends ListItem implements ISB2ChatMessage
 	private Div chatBody;
 	@JsonIgnore
 	private Div chatBodyHeader;
-	
+
 	/**
 	 * A Chat message that is left aligned
 	 */
@@ -83,7 +83,6 @@ public class SB2ChatRightMessage extends ListItem implements ISB2ChatMessage
 
 			SmallText st = new SmallText();
 			Moment m = new Moment(messageDate, ComponentTypes.Span);
-			//st.addClass(BSComponentDefaultOptions.Pull_Left);
 			st.addClass(BSComponentColoursOptions.Text_Muted);
 
 			st.add(m);
@@ -91,7 +90,6 @@ public class SB2ChatRightMessage extends ListItem implements ISB2ChatMessage
 			getChatBodyHeader().add(st);
 			getChatBodyHeader().add(headerStrong);
 
-			//getChatBody().add(getChatBodyHeader());
 			getChatBody().add(message);
 
 			add(getChatBody());
@@ -273,5 +271,64 @@ public class SB2ChatRightMessage extends ListItem implements ISB2ChatMessage
 			this.chatBodyHeader.addClass("header");
 			getChatBody().add(this.chatBodyHeader);
 		}
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof SB2ChatRightMessage))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		SB2ChatRightMessage that = (SB2ChatRightMessage) o;
+
+		if (getHeaderText() != null ? !getHeaderText().equals(that.getHeaderText()) : that.getHeaderText() != null)
+		{
+			return false;
+		}
+		if (getMessageDate() != null ? !getMessageDate().equals(that.getMessageDate()) : that.getMessageDate() != null)
+		{
+			return false;
+		}
+		if (getMessage() != null ? !getMessage().equals(that.getMessage()) : that.getMessage() != null)
+		{
+			return false;
+		}
+		if (getMessageImageSpan() != null ? !getMessageImageSpan().equals(that.getMessageImageSpan()) : that.getMessageImageSpan() != null)
+		{
+			return false;
+		}
+		if (getMessageImage() != null ? !getMessageImage().equals(that.getMessageImage()) : that.getMessageImage() != null)
+		{
+			return false;
+		}
+		if (!getChatBody().equals(that.getChatBody()))
+		{
+			return false;
+		}
+		return getChatBodyHeader().equals(that.getChatBodyHeader());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getHeaderText() != null ? getHeaderText().hashCode() : 0);
+		result = 31 * result + (getMessageDate() != null ? getMessageDate().hashCode() : 0);
+		result = 31 * result + (getMessage() != null ? getMessage().hashCode() : 0);
+		result = 31 * result + (getMessageImageSpan() != null ? getMessageImageSpan().hashCode() : 0);
+		result = 31 * result + (getMessageImage() != null ? getMessageImage().hashCode() : 0);
+		result = 31 * result + getChatBody().hashCode();
+		result = 31 * result + getChatBodyHeader().hashCode();
+		return result;
 	}
 }

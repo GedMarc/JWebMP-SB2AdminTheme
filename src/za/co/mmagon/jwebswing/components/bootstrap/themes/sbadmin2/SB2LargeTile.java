@@ -58,13 +58,33 @@ public class SB2LargeTile extends Div
 	}
 
 	/**
-	 * @param largeIcon   The large icon on the left
-	 * @param title       The large text on the right
-	 * @param description The text under the title
-	 * @param footer      The footer to display
-	 * @param thiss       Placeholder so I could find the right constructor to link to xD
+	 * @param largeIcon
+	 * 		The large icon on the left
+	 * @param title
+	 * 		The large text on the right
+	 * @param description
+	 * 		The text under the title
+	 * @param footer
+	 * 		The footer to display
 	 */
-	public SB2LargeTile(ComponentHierarchyBase largeIcon, ComponentHierarchyBase title, ComponentHierarchyBase description, ComponentHierarchyBase footer, boolean thiss)
+	public SB2LargeTile(ComponentHierarchyBase largeIcon, String title, ComponentHierarchyBase description, ComponentHierarchyBase footer)
+	{
+		this(largeIcon, new Div(title), description, footer);
+	}
+
+	/**
+	 * @param largeIcon
+	 * 		The large icon on the left
+	 * @param title
+	 * 		The large text on the right
+	 * @param description
+	 * 		The text under the title
+	 * @param footer
+	 * 		The footer to display
+	 * @param thiss
+	 * 		Placeholder so I could find the right constructor to link to xD
+	 */
+	public SB2LargeTile(ComponentHierarchyBase largeIcon, ComponentHierarchyBase title, ComponentHierarchyBase description, ComponentHierarchyBase footer)
 	{
 		setIcon(largeIcon);
 		setTitle(title);
@@ -75,31 +95,23 @@ public class SB2LargeTile extends Div
 	}
 
 	/**
-	 * @param largeIcon   The large icon on the left
-	 * @param title       The large text on the right
-	 * @param description The text under the title
-	 * @param footer      The footer to display
-	 */
-	public SB2LargeTile(ComponentHierarchyBase largeIcon, String title, ComponentHierarchyBase description, ComponentHierarchyBase footer)
-	{
-		this(largeIcon, new Div(title), description, footer, true);
-	}
-
-	/**
-	 * @param largeIcon   The large icon on the left
-	 * @param title       The large text on the right
-	 * @param description The text under the title
-	 * @param footer      The footer to display
+	 * @param largeIcon
+	 * 		The large icon on the left
+	 * @param title
+	 * 		The large text on the right
+	 * @param description
+	 * 		The text under the title
+	 * @param footer
+	 * 		The footer to display
 	 */
 	public SB2LargeTile(ComponentHierarchyBase largeIcon, String title, String description, ComponentHierarchyBase footer)
 	{
-		this(largeIcon, new Div(title), new Div(description), footer, true);
+		this(largeIcon, new Div(title), new Div(description), footer);
 	}
 
 	@Override
 	public void preConfigure()
 	{
-		//BSRow.WrapComponent(this);
 		if (!isConfigured())
 		{
 			getPanel().setPanelBody(null); //no body on the large tile
@@ -115,7 +127,6 @@ public class SB2LargeTile extends Div
 				iconDiv.add(this.icon);
 				iconDiv.addClass("pull-left");
 				headerRow.add(iconDiv);
-				//BSRow.WrapComponent(iconDiv);
 			}
 
 			if (this.title != null)
@@ -358,5 +369,64 @@ public class SB2LargeTile extends Div
 		titleDiv.setText(title);
 		this.title = titleDiv;
 		return titleDiv;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof SB2LargeTile))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		SB2LargeTile that = (SB2LargeTile) o;
+
+		if (!getDescription().equals(that.getDescription()))
+		{
+			return false;
+		}
+		if (!getFooter().equals(that.getFooter()))
+		{
+			return false;
+		}
+		if (!getPanel().equals(that.getPanel()))
+		{
+			return false;
+		}
+		if (getFooterText() != null ? !getFooterText().equals(that.getFooterText()) : that.getFooterText() != null)
+		{
+			return false;
+		}
+		if (getFooterGoIcon() != null ? !getFooterGoIcon().equals(that.getFooterGoIcon()) : that.getFooterGoIcon() != null)
+		{
+			return false;
+		}
+		if (!getIcon().equals(that.getIcon()))
+		{
+			return false;
+		}
+		return getTitle().equals(that.getTitle());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getDescription().hashCode();
+		result = 31 * result + getFooter().hashCode();
+		result = 31 * result + getPanel().hashCode();
+		result = 31 * result + (getFooterText() != null ? getFooterText().hashCode() : 0);
+		result = 31 * result + (getFooterGoIcon() != null ? getFooterGoIcon().hashCode() : 0);
+		result = 31 * result + getIcon().hashCode();
+		result = 31 * result + getTitle().hashCode();
+		return result;
 	}
 }

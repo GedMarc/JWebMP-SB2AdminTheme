@@ -33,11 +33,11 @@ import java.util.Iterator;
  */
 public class SB2NavbarTop extends Div
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	private Component leftHeader;
 	private List rightHeader;
-	
+
 	/**
 	 * Constructs an empty NavBar top
 	 */
@@ -45,7 +45,7 @@ public class SB2NavbarTop extends Div
 	{
 		this(null, null);
 	}
-	
+
 	/**
 	 * Constructs a new SB@ NavBar top with the given header, and menu list
 	 *
@@ -61,7 +61,7 @@ public class SB2NavbarTop extends Div
 		addClass(SB2ThemeClasses.Navbar_Default);
 		addClass(SB2ThemeClasses.Navbar_Static_Top);
 	}
-	
+
 	/**
 	 * The left bar header
 	 *
@@ -71,7 +71,7 @@ public class SB2NavbarTop extends Div
 	{
 		return leftHeader;
 	}
-	
+
 	/**
 	 * The left bar header
 	 *
@@ -87,7 +87,7 @@ public class SB2NavbarTop extends Div
 			getChildren().add(0, this.leftHeader);
 		}
 	}
-	
+
 	/**
 	 * Gets the menu list for the nav-bar
 	 *
@@ -97,7 +97,7 @@ public class SB2NavbarTop extends Div
 	{
 		return rightHeader;
 	}
-	
+
 	/**
 	 * Sets the menu list for the nav-bar
 	 *
@@ -115,7 +115,7 @@ public class SB2NavbarTop extends Div
 			getChildren().add(this.rightHeader);
 		}
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
@@ -132,5 +132,39 @@ public class SB2NavbarTop extends Div
 			}
 		}
 		super.preConfigure();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof SB2NavbarTop))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		SB2NavbarTop that = (SB2NavbarTop) o;
+
+		if (getLeftHeader() != null ? !getLeftHeader().equals(that.getLeftHeader()) : that.getLeftHeader() != null)
+		{
+			return false;
+		}
+		return getRightHeader() != null ? getRightHeader().equals(that.getRightHeader()) : that.getRightHeader() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getLeftHeader() != null ? getLeftHeader().hashCode() : 0);
+		result = 31 * result + (getRightHeader() != null ? getRightHeader().hashCode() : 0);
+		return result;
 	}
 }

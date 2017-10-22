@@ -74,19 +74,6 @@ public class SB2DropDownAlert extends JavaScriptPart
 	}
 
 	/**
-	 * A new drop down message item
-	 *
-	 * @param icon
-	 * @param message
-	 * @param dateFormat
-	 */
-	public SB2DropDownAlert(String icon, String message, Date dateFormat)
-	{
-		this.icon = icon;
-		this.message = message;
-	}
-
-	/**
 	 * The physical Bold component (text is in getText(
 	 *
 	 * @return

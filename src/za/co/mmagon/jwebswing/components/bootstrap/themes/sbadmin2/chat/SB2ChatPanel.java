@@ -57,8 +57,10 @@ public class SB2ChatPanel extends BSPanelDefault
 	/**
 	 * A default sb2 chat panel with the given settings
 	 *
-	 * @param icon  The icon
-	 * @param title The title
+	 * @param icon
+	 * 		The icon
+	 * @param title
+	 * 		The title
 	 */
 	public SB2ChatPanel(String icon, String title)
 	{
@@ -117,5 +119,39 @@ public class SB2ChatPanel extends BSPanelDefault
 			this.chatList.addClass(SB2ThemeClasses.Chat);
 			getPanelBody().add(this.chatList);
 		}
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof SB2ChatPanel))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		SB2ChatPanel that = (SB2ChatPanel) o;
+
+		if (!getDropDownMenu().equals(that.getDropDownMenu()))
+		{
+			return false;
+		}
+		return getChatList().equals(that.getChatList());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getDropDownMenu().hashCode();
+		result = 31 * result + getChatList().hashCode();
+		return result;
 	}
 }

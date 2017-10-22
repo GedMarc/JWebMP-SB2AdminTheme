@@ -26,6 +26,7 @@ import za.co.mmagon.jwebswing.plugins.moment.Moment;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A shortcut class to building drop down message types
@@ -36,11 +37,11 @@ import java.util.ArrayList;
  */
 public class SB2DropDownAlerts extends SB2DropDown
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
-	private ArrayList<SB2DropDownAlert> messages;
-	
+
+	private java.util.List<SB2DropDownAlert> messages;
+
 	/**
 	 * Construct a new sb admin 2 dropdown formatted as messages
 	 */
@@ -48,18 +49,18 @@ public class SB2DropDownAlerts extends SB2DropDown
 	{
 		this(null);
 	}
-	
+
 	/**
 	 * Construct a new sb admin 2 dropdown formatted as messages
 	 *
 	 * @param messages
 	 */
-	public SB2DropDownAlerts(ArrayList<SB2DropDownAlert> messages)
+	public SB2DropDownAlerts(List<SB2DropDownAlert> messages)
 	{
 		this.messages = messages;
 		getDropDownContents().addClass(SB2ThemeClasses.DropDown_Tasks);
 	}
-	
+
 	/**
 	 * Read from a URL
 	 *
@@ -76,63 +77,59 @@ public class SB2DropDownAlerts extends SB2DropDown
 		messages.preConfigure();
 		return messages;
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
 		if (!isConfigured())
 		{
-			getMessages().stream().map((SB2DropDownAlert message) ->
-			                           {
-				                           ListItem li = new ListItem();
-				                           Link link = new Link("#");
-				                           Italic i = new Italic()
-				                           {
-					                           private static final long serialVersionUID = 1L;
-					
-					                           @Override
-					                           protected StringBuilder renderAfterTag()
-					                           {
-						                           StringBuilder sb = new StringBuilder();
-						                           sb.append(" ").append(message.getMessage());
-						                           return sb;
-					                           }
-				                           };
-				                           i.addClass(message.getIcon());
-				                           Div topSection = new Div();
-				                           Span span = new Span();
-				                           span.addClass("pull-right");
-				                           span.addClass("text-muted");
-				
-				                           topSection.add(i);
-				                           Moment date = new Moment(message.getDate(), ComponentTypes.Span);
-				
-				                           date.addClass(BSComponentDefaultOptions.Pull_Right);
-				                           date.addClass(BSComponentColoursOptions.Text_Muted);
-				                           topSection.add(date);
-				
-				                           topSection.add(span);
-				
-				                           li.add(link);
-				                           link.add(topSection);
-				
-				                           return li;
-			                           }).forEach((li)
-					                                      ->
-			                                      {
-				                                      getDropDownContents().add(li);
-				                                      addDivider();
-			                                      });
+			getMessages().forEach(message ->
+			                      {
+				                      ListItem li = new ListItem();
+				                      Link link = new Link("#");
+				                      Italic i = new Italic()
+				                      {
+					                      private static final long serialVersionUID = 1L;
+
+					                      @Override
+					                      protected StringBuilder renderAfterTag()
+					                      {
+						                      StringBuilder sb = new StringBuilder();
+						                      sb.append(" ").append(message.getMessage());
+						                      return sb;
+					                      }
+				                      };
+				                      i.addClass(message.getIcon());
+				                      Div topSection = new Div();
+				                      Span span = new Span();
+				                      span.addClass("pull-right");
+				                      span.addClass("text-muted");
+
+				                      topSection.add(i);
+				                      Moment date = new Moment(message.getDate(), ComponentTypes.Span);
+
+				                      date.addClass(BSComponentDefaultOptions.Pull_Right);
+				                      date.addClass(BSComponentColoursOptions.Text_Muted);
+				                      topSection.add(date);
+
+				                      topSection.add(span);
+
+				                      li.add(link);
+				                      link.add(topSection);
+
+				                      getDropDownContents().add(li);
+				                      addDivider();
+			                      });
 		}
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Returns the current messages
 	 *
 	 * @return
 	 */
-	public ArrayList<SB2DropDownAlert> getMessages()
+	public List<SB2DropDownAlert> getMessages()
 	{
 		if (messages == null)
 		{
@@ -140,14 +137,43 @@ public class SB2DropDownAlerts extends SB2DropDown
 		}
 		return messages;
 	}
-	
+
 	/**
 	 * Sets the current messages array list
 	 *
 	 * @param messages
 	 */
-	public void setMessages(ArrayList<SB2DropDownAlert> messages)
+	public void setMessages(List<SB2DropDownAlert> messages)
 	{
 		this.messages = messages;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof SB2DropDownAlerts))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		SB2DropDownAlerts that = (SB2DropDownAlerts) o;
+
+		return getMessages().equals(that.getMessages());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getMessages().hashCode();
+		return result;
 	}
 }

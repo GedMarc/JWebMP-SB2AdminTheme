@@ -19,8 +19,6 @@ package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
-import java.util.Date;
-
 /**
  * A standard message display format from SB2 Admin Theme
  *
@@ -31,7 +29,7 @@ import java.util.Date;
 @ComponentInformation(name = "SB2 Drop Down Tasks", description = "A shortcut to generating the tasks with progress bar drop downs", url = "https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/index.html")
 public class SB2DropDownTask extends JavaScriptPart
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The name in bold
@@ -41,7 +39,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	 * The message to display
 	 */
 	private String message;
-	
+
 	/**
 	 * The percentage
 	 */
@@ -54,15 +52,15 @@ public class SB2DropDownTask extends JavaScriptPart
 	 * Any applicable data field
 	 */
 	private String data;
-	
+
 	/**
 	 * Constructs a new standardized drop down message
 	 */
 	public SB2DropDownTask()
 	{
-	
+
 	}
-	
+
 	/**
 	 * With just a name
 	 *
@@ -72,20 +70,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		this.name = name;
 	}
-	
-	/**
-	 * A new drop down message item
-	 *
-	 * @param name
-	 * @param message
-	 * @param dateFormat
-	 */
-	public SB2DropDownTask(String name, String message, Date dateFormat)
-	{
-		this.name = name;
-		this.message = message;
-	}
-	
+
 	/**
 	 * Returns the given percentage for this guy
 	 *
@@ -95,7 +80,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		return percentage;
 	}
-	
+
 	/**
 	 * Sets a given percentage for this guy
 	 *
@@ -105,7 +90,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		this.percentage = percentage;
 	}
-	
+
 	/**
 	 * The physical Bold component (text is in getText(
 	 *
@@ -115,7 +100,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		return name;
 	}
-	
+
 	/**
 	 * Sets the name
 	 *
@@ -125,7 +110,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		this.name = name;
 	}
-	
+
 	/**
 	 * Gets the current message
 	 *
@@ -135,7 +120,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		return message;
 	}
-	
+
 	/**
 	 * Sets the current message
 	 *
@@ -145,7 +130,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		this.message = message;
 	}
-	
+
 	/**
 	 * Any linking URL
 	 *
@@ -155,7 +140,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		return url;
 	}
-	
+
 	/**
 	 * Sets the URL to go to
 	 *
@@ -165,7 +150,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		this.url = url;
 	}
-	
+
 	/**
 	 * Any data that needs to be stored
 	 *
@@ -175,7 +160,7 @@ public class SB2DropDownTask extends JavaScriptPart
 	{
 		return data;
 	}
-	
+
 	/**
 	 * Any data that needs to be stored
 	 *

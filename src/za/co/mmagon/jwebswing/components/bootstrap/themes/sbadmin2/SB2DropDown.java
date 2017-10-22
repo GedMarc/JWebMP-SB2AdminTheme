@@ -78,13 +78,9 @@ public class SB2DropDown extends ListItem
 			getChildren().add(this.dropDownComponent);
 			dropDownComponent.addClass(SB2ThemeClasses.DropDown_Toggle);
 			dropDownComponent.addAttribute(LinkAttributes.Data_Toggle, "dropdown");
-			if (dropDownContents != null)
-			{
-				// dropDownComponent.addAttribute(LinkAttributes.Data_Target, dropDownContents.getID(true));
-			}
 		}
 	}
-	
+
 	/**
 	 * Sets the drop down component
 	 *
@@ -99,10 +95,6 @@ public class SB2DropDown extends ListItem
 			getChildren().add(this.getDropDownComponent());
 			getDropDownComponent().addClass(SB2ThemeClasses.DropDown_Toggle);
 			getDropDownComponent().addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
-			if (getDropDownContents() != null)
-			{
-				//  dropDownComponent.addAttribute(ButtonAttributes.Data_Target, dropDownContents.getID(true));
-			}
 		}
 	}
 
@@ -146,11 +138,40 @@ public class SB2DropDown extends ListItem
 		{
 			getChildren().add(this.dropDownContents);
 			this.dropDownContents.addClass(SB2ThemeClasses.DropDown_Menu);
-			if (dropDownComponent != null)
-			{
-				//  dropDownComponent.addAttribute(LinkAttributes.Data_Target, dropDownContents.getID(true));
-			}
 		}
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof SB2DropDown))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		SB2DropDown that = (SB2DropDown) o;
+
+		if (!getDropDownComponent().equals(that.getDropDownComponent()))
+		{
+			return false;
+		}
+		return getDropDownContents().equals(that.getDropDownContents());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getDropDownComponent().hashCode();
+		result = 31 * result + getDropDownContents().hashCode();
+		return result;
+	}
 }
