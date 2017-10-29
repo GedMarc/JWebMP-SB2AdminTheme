@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2;
 import com.fasterxml.jackson.annotation.JsonValue;
 import za.co.mmagon.jwebswing.base.interfaces.ICSSClassName;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_SPACE;
+
 /**
  * A list of all the classes with SB Admin 2 theme https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/index.html
  *
@@ -81,7 +83,7 @@ public enum SB2ThemeClasses implements ICSSClassName
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-').replace('$', ' ');
+		return name().toLowerCase().replace('_', '-').replace('$', CHAR_SPACE);
 	}
 	
 }

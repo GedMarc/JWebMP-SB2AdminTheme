@@ -28,6 +28,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SPACE;
+
 /**
  * A shortcut class to building drop down message types
  *
@@ -95,15 +97,15 @@ public class SB2DropDownAlerts extends SB2DropDown
 					                      protected StringBuilder renderAfterTag()
 					                      {
 						                      StringBuilder sb = new StringBuilder();
-						                      sb.append(" ").append(message.getMessage());
+						                      sb.append(STRING_SPACE).append(message.getMessage());
 						                      return sb;
 					                      }
 				                      };
 				                      i.addClass(message.getIcon());
 				                      Div topSection = new Div();
 				                      Span span = new Span();
-				                      span.addClass("pull-right");
-				                      span.addClass("text-muted");
+				                      span.addClass(BSComponentDefaultOptions.Pull_Right);
+				                      span.addClass(BSComponentDefaultOptions.Text_Muted);
 
 				                      topSection.add(i);
 				                      Moment date = new Moment(message.getDate(), ComponentTypes.Span);
