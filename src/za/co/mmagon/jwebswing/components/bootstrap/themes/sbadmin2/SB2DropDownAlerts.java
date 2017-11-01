@@ -74,7 +74,7 @@ public class SB2DropDownAlerts extends SB2DropDown
 	 */
 	public static SB2DropDownAlerts fromUrl(URL content) throws IOException
 	{
-		ArrayList list2 = new JavaScriptPart().FromToList(content, SB2DropDownAlert[].class);
+		List list2 = new JavaScriptPart().FromToList(content, SB2DropDownAlert[].class);
 		SB2DropDownAlerts messages = new SB2DropDownAlerts(list2);
 		messages.preConfigure();
 		return messages;
