@@ -26,6 +26,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListCSS;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListStyleType;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * A drop down list item for the top nav bar. Comes out as an icon
@@ -59,7 +60,7 @@ public class SB2DropDown extends ListItem
 	{
 		if (dropDownComponent == null)
 		{
-			setDropDownComponent(new Link("#"));
+			setDropDownComponent(new Link(StaticStrings.STRING_HASH));
 		}
 		return dropDownComponent;
 	}

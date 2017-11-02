@@ -20,6 +20,7 @@ import za.co.mmagon.jwebswing.base.html.*;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.BSProgressBar;
 import za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar.BSProgressBarThemes;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 import java.io.IOException;
 import java.net.URL;
@@ -84,7 +85,7 @@ public class SB2DropDownTasks extends SB2DropDown
 			getMessages().forEach(message ->
 			                      {
 				                      ListItem li = new ListItem();
-				                      Link link = new Link("#");
+				                      Link link = new Link(StaticStrings.STRING_HASH);
 				                      Div container = new Div();
 				                      Paragraph topSection = new Paragraph();
 				                      Span span = new Span();
@@ -95,17 +96,8 @@ public class SB2DropDownTasks extends SB2DropDown
 				                      topSection.add(new Bold(message.getName()));
 				                      topSection.add(span);
 
-				                      BSProgressBar progressBar = new BSProgressBar(true);
-				                      progressBar.getProgressBar().setMin(0);
-				                      progressBar.getProgressBar().setMax(100);
-				                      progressBar.getProgressBar().setValue(message.getPercentage());
-				                      progressBar.getProgressBar().setLabel("" + message.getPercentage() + " % Complete");
-				                      progressBar.setActive(true);
-				                      progressBar.getProgressBar().setTheme(BSProgressBarThemes.valueOf(message.getData()));
-				                      //progressBar.add(message.getMessage());
-
 				                      container.add(topSection);
-				                      container.add(progressBar);
+				                      container.add(buildProgressBar(message));
 				                      li.add(link);
 				                      link.add(container);
 				                      getDropDownContents().add(li);
@@ -113,6 +105,18 @@ public class SB2DropDownTasks extends SB2DropDown
 			                      });
 		}
 		super.preConfigure();
+	}
+
+	private BSProgressBar buildProgressBar(SB2DropDownTask message)
+	{
+		BSProgressBar progressBar = new BSProgressBar(true);
+		progressBar.getProgressBar().setMin(0);
+		progressBar.getProgressBar().setMax(100);
+		progressBar.getProgressBar().setValue(message.getPercentage());
+		progressBar.getProgressBar().setLabel(Double.toHexString(message.getPercentage()) + " % Complete");
+		progressBar.setActive(true);
+		progressBar.getProgressBar().setTheme(BSProgressBarThemes.valueOf(message.getData()));
+		return progressBar;
 	}
 
 	/**
@@ -137,5 +141,17 @@ public class SB2DropDownTasks extends SB2DropDown
 	public void setMessages(List<SB2DropDownTask> messages)
 	{
 		this.messages = messages;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
 	}
 }

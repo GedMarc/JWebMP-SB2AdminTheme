@@ -25,6 +25,7 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.moment.Moment;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 import java.io.IOException;
 import java.net.URL;
@@ -89,7 +90,7 @@ public class SB2DropDownMessages extends SB2DropDown
 			getMessages().forEach(message ->
 			                      {
 				                      ListItem li = new ListItem();
-				                      Link link = new Link("#");
+				                      Link link = new Link(StaticStrings.STRING_HASH);
 				                      Div topSection = new Div();
 				                      Moment date = new Moment(message.getDate(), ComponentTypes.Span);
 
@@ -131,5 +132,17 @@ public class SB2DropDownMessages extends SB2DropDown
 	public void setMessages(List<SB2DropDownMessage> messages)
 	{
 		this.messages = messages;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
 	}
 }

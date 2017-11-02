@@ -28,6 +28,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SPACE;
 
 /**
@@ -88,34 +89,11 @@ public class SB2DropDownAlerts extends SB2DropDown
 			getMessages().forEach(message ->
 			                      {
 				                      ListItem li = new ListItem();
-				                      Link link = new Link("#");
-				                      Italic i = new Italic()
-				                      {
-					                      private static final long serialVersionUID = 1L;
+				                      Link link = new Link(STRING_HASH);
+				                      Italic i = buildItalicEntry(message);
 
-					                      @Override
-					                      protected StringBuilder renderAfterTag()
-					                      {
-						                      StringBuilder sb = new StringBuilder();
-						                      sb.append(STRING_SPACE).append(message.getMessage());
-						                      return sb;
-					                      }
-				                      };
-				                      i.addClass(message.getIcon());
-				                      Div topSection = new Div();
-				                      Span span = new Span();
-				                      span.addClass(BSComponentDefaultOptions.Pull_Right);
-				                      span.addClass(BSComponentDefaultOptions.Text_Muted);
-
+				                      Div topSection = buildTopSection(message);
 				                      topSection.add(i);
-				                      Moment date = new Moment(message.getDate(), ComponentTypes.Span);
-
-				                      date.addClass(BSComponentDefaultOptions.Pull_Right);
-				                      date.addClass(BSComponentColoursOptions.Text_Muted);
-				                      topSection.add(date);
-
-				                      topSection.add(span);
-
 				                      li.add(link);
 				                      link.add(topSection);
 
@@ -124,6 +102,39 @@ public class SB2DropDownAlerts extends SB2DropDown
 			                      });
 		}
 		super.preConfigure();
+	}
+
+	protected Italic buildItalicEntry(SB2DropDownAlert message)
+	{
+		Italic i = new Italic()
+		{
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected StringBuilder renderAfterTag()
+			{
+				StringBuilder sb = new StringBuilder();
+				sb.append(STRING_SPACE).append(message.getMessage());
+				return sb;
+			}
+		};
+		i.addClass(message.getIcon());
+		return i;
+	}
+
+	protected Div buildTopSection(SB2DropDownAlert message)
+	{
+		Div topSection = new Div();
+		Span span = new Span();
+		span.addClass(BSComponentDefaultOptions.Pull_Right);
+		span.addClass(BSComponentDefaultOptions.Text_Muted);
+		topSection.add(span);
+		Moment date = new Moment(message.getDate(), ComponentTypes.Span);
+
+		date.addClass(BSComponentDefaultOptions.Pull_Right);
+		date.addClass(BSComponentColoursOptions.Text_Muted);
+		topSection.add(date);
+		return topSection;
 	}
 
 	/**
