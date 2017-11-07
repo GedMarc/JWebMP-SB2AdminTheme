@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import za.co.mmagon.jwebswing.base.interfaces.ICSSClassName;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_SPACE;
 
@@ -83,7 +84,7 @@ public enum SB2ThemeClasses implements ICSSClassName
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-').replace('$', CHAR_SPACE);
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-').replace('$', CHAR_SPACE);
 	}
 	
 }
