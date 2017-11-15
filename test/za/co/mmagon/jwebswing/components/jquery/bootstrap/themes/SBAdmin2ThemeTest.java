@@ -36,6 +36,7 @@ public class SBAdmin2ThemeTest extends BaseTestClass
 	}
 
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testAddingThemeToBody()
 	{
 		SB2Theme theme = new SB2Theme();
@@ -59,6 +60,7 @@ public class SBAdmin2ThemeTest extends BaseTestClass
 	}
 
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testAddingThemeToAny()
 	{
 		SB2Theme theme = new SB2Theme();

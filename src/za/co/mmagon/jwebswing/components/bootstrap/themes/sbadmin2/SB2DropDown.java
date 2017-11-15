@@ -70,6 +70,7 @@ public class SB2DropDown extends ListItem
 	 *
 	 * @param dropDownComponent
 	 */
+	@SuppressWarnings("unchecked")
 	public void setDropDownComponent(Link dropDownComponent)
 	{
 		getChildren().remove(this.dropDownComponent);
@@ -87,6 +88,7 @@ public class SB2DropDown extends ListItem
 	 *
 	 * @param dropDownComponent
 	 */
+	@SuppressWarnings("unchecked")
 	public void setDropDownComponent(Button dropDownComponent)
 	{
 		getChildren().remove(this.dropDownComponent);
@@ -104,6 +106,7 @@ public class SB2DropDown extends ListItem
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public ListItem addDivider()
 	{
 		ListItem divider = new ListItem();
@@ -131,6 +134,7 @@ public class SB2DropDown extends ListItem
 	 *
 	 * @param dropDownContents
 	 */
+	@SuppressWarnings("unchecked")
 	public void setDropDownContents(List dropDownContents)
 	{
 		getChildren().remove(this.dropDownContents);
@@ -160,19 +164,12 @@ public class SB2DropDown extends ListItem
 
 		SB2DropDown that = (SB2DropDown) o;
 
-		if (!getDropDownComponent().equals(that.getDropDownComponent()))
-		{
-			return false;
-		}
-		return getDropDownContents().equals(that.getDropDownContents());
+		return getDropDownComponent().equals(that.getDropDownComponent()) && getDropDownContents().equals(that.getDropDownContents());
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getDropDownComponent().hashCode();
-		result = 31 * result + getDropDownContents().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }
