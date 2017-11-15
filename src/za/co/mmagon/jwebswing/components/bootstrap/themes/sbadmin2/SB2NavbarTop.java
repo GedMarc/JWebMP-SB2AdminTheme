@@ -84,7 +84,7 @@ public class SB2NavbarTop extends Div
 		if (this.leftHeader != null)
 		{
 			leftHeader.addClass(SB2ThemeClasses.Navbar_Header);
-			getChildren().add(0, this.leftHeader);
+			getChildren().add(this.leftHeader);
 		}
 	}
 

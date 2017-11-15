@@ -51,7 +51,7 @@ public class SB2ChatPanel extends BSPanelDefault
 	 */
 	public SB2ChatPanel()
 	{
-		addClass(0, SB2ThemeClasses.Chat_Panel);
+		addClass(SB2ThemeClasses.Chat_Panel);
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class SB2ChatPanel extends BSPanelDefault
 	{
 		if (chatList == null)
 		{
-			setChatList(new List<>(false));
+			setChatList(new List(false));
 		}
 		return chatList;
 	}
