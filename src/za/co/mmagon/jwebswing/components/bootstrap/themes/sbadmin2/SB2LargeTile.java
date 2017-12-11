@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSRow;
 import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanelThemes;
@@ -142,7 +142,7 @@ public class SB2LargeTile extends Div
 			panel.getPanelHeader().add(headerRow);
 
 			rightSide.add(getDescription());
-			rightSide.addClass(BSComponentDefaultOptions.Text_Right);
+			rightSide.addClass(BSDefaultOptions.Text_Right);
 
 			headerRow.add(rightSide);
 

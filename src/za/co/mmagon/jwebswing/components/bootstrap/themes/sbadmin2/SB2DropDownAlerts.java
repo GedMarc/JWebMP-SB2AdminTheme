@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,8 @@ package za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2;
 import za.co.mmagon.jwebswing.base.html.*;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSColoursOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.moment.Moment;
 
 import java.io.IOException;
@@ -126,13 +126,13 @@ public class SB2DropDownAlerts extends SB2DropDown
 	{
 		Div topSection = new Div();
 		Span span = new Span();
-		span.addClass(BSComponentDefaultOptions.Pull_Right);
-		span.addClass(BSComponentDefaultOptions.Text_Muted);
+		span.addClass(BSDefaultOptions.Pull_Right);
+		span.addClass(BSDefaultOptions.Text_Muted);
 		topSection.add(span);
 		Moment date = new Moment(message.getDate(), ComponentTypes.Span);
 
-		date.addClass(BSComponentDefaultOptions.Pull_Right);
-		date.addClass(BSComponentColoursOptions.Text_Muted);
+		date.addClass(BSDefaultOptions.Pull_Right);
+		date.addClass(BSColoursOptions.Text_Muted);
 		topSection.add(date);
 		return topSection;
 	}

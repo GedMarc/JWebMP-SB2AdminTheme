@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,9 +20,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import za.co.mmagon.jwebswing.base.html.*;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.SB2ThemeClasses;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentClearfixOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSClearfixOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSColoursOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.moment.Moment;
 
 import java.util.Date;
@@ -64,8 +64,8 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 	 */
 	public SB2ChatLeftMessage()
 	{
-		addClass(BSComponentDefaultOptions.Left);
-		addClass(BSComponentClearfixOptions.Clearfix);
+		addClass(BSDefaultOptions.Left);
+		addClass(BSClearfixOptions.Clearfix);
 	}
 
 	@Override
@@ -77,13 +77,13 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 			add(getMessageImageSpan());
 
 			Strong headerStrong = new Strong(headerText);
-			headerStrong.addClass(BSComponentDefaultOptions.Primary_Font);
+			headerStrong.addClass(BSDefaultOptions.Primary_Font);
 
 			getChatBodyHeader().add(headerStrong);
 			SmallText st = new SmallText();
 			Moment m = new Moment(messageDate, ComponentTypes.Span);
-			st.addClass(BSComponentDefaultOptions.Pull_Right);
-			st.addClass(BSComponentColoursOptions.Text_Muted);
+			st.addClass(BSDefaultOptions.Pull_Right);
+			st.addClass(BSColoursOptions.Text_Muted);
 			st.add(m);
 
 			getChatBodyHeader().add(st);
@@ -120,7 +120,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 		this.messageImage = messageImage;
 		if (this.messageImage != null)
 		{
-			this.messageImage.addClass(BSComponentDefaultOptions.Img_Circle);
+			this.messageImage.addClass(BSDefaultOptions.Img_Circle);
 		}
 	}
 
@@ -149,7 +149,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 		if (this.messageImageSpan != null)
 		{
 			this.messageImageSpan.addClass(SB2ThemeClasses.Chat_Img);
-			this.messageImageSpan.addClass(BSComponentDefaultOptions.Pull_Left);
+			this.messageImageSpan.addClass(BSDefaultOptions.Pull_Left);
 		}
 	}
 
@@ -238,7 +238,7 @@ public class SB2ChatLeftMessage extends ListItem implements ISB2ChatMessage
 		if (this.chatBody != null)
 		{
 			this.chatBody.addClass(SB2ThemeClasses.Chat_Body);
-			this.chatBody.addClass(BSComponentClearfixOptions.Clearfix);
+			this.chatBody.addClass(BSClearfixOptions.Clearfix);
 		}
 	}
 

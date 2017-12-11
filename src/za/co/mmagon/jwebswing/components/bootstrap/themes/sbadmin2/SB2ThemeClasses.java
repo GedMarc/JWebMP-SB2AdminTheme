@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import za.co.mmagon.jwebswing.base.interfaces.ICSSClassName;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_SPACE;
 
 /**
@@ -79,12 +80,12 @@ public enum SB2ThemeClasses implements ICSSClassName
 	Navbar_Header,
 	Nav,
 	Navbar_Right;
-	
+
 	@JsonValue
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-').replace('$', CHAR_SPACE);
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH).replace('$', CHAR_SPACE);
 	}
-	
+
 }

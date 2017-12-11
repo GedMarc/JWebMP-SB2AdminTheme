@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,8 +22,8 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSColoursOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.moment.Moment;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
@@ -94,8 +94,8 @@ public class SB2DropDownMessages extends SB2DropDown
 				                      Div topSection = new Div();
 				                      Moment date = new Moment(message.getDate(), ComponentTypes.Span);
 
-				                      date.addClass(BSComponentDefaultOptions.Pull_Right);
-				                      date.addClass(BSComponentColoursOptions.Text_Muted);
+				                      date.addClass(BSDefaultOptions.Pull_Right);
+				                      date.addClass(BSColoursOptions.Text_Muted);
 				                      topSection.add(new Bold(message.getName()));
 				                      topSection.add(date);
 
