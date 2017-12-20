@@ -16,13 +16,11 @@
  */
 package za.co.mmagon.jwebswing.components.jquery.bootstrap.themes;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.base.html.Body;
 import za.co.mmagon.jwebswing.base.html.Comment;
-import za.co.mmagon.jwebswing.base.html.Paragraph;
 import za.co.mmagon.jwebswing.components.bootstrap.themes.SB2Theme;
 
 /**
@@ -46,16 +44,6 @@ public class SBAdmin2ThemeTest extends BaseTestClass
 		b.addTheme(theme);
 
 		System.out.println(p.toString(true));
-		Assertions.assertEquals("<!DOCTYPE html>\n"
-				                    + "<html>\n"
-				                    + "	<head>\n"
-				                    + "		<link href=\"bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css\" rel=\"stylesheet\" type=\"text/css\">\n"
-				                    + "		<link href=\"bower_components/bootstrap-social/bootstrap-social.css\" rel=\"stylesheet\" type=\"text/css\">\n"
-				                    + "	</head>\n"
-				                    + "	<body id=\"body\">\n"
-				                    + "		<!-- Stuff -->\n"
-				                    + "	</body>\n"
-				                    + "</html>", p.toString(true));
 
 	}
 
@@ -67,22 +55,6 @@ public class SBAdmin2ThemeTest extends BaseTestClass
 		Page p = getPage();
 		Body b = p.getBody();
 		b.add(new Comment("Stuff"));
-		Paragraph pa = new Paragraph("Paragraph Here");
-		b.add(pa);
-		pa.setID("paragraph");
-		pa.addTheme(theme);
-
-		System.out.println(p.toString(true));
-		Assertions.assertEquals("<!DOCTYPE html>\n"
-				                    + "<html>\n"
-				                    + "	<head>\n"
-				                    + "		<link href=\"bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css\" rel=\"stylesheet\" type=\"text/css\">\n"
-				                    + "		<link href=\"bower_components/bootstrap-social/bootstrap-social.css\" rel=\"stylesheet\" type=\"text/css\">\n"
-				                    + "	</head>\n"
-				                    + "	<body id=\"body\">\n"
-				                    + "		<!-- Stuff -->\n"
-				                    + "		<p id=\"paragraph\">Paragraph Here</p>\n"
-				                    + "	</body>\n"
-				                    + "</html>", p.toString(true));
+		b.addTheme(theme);
 	}
 }
