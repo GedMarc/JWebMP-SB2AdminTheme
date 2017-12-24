@@ -20,9 +20,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import za.co.mmagon.jwebswing.base.html.*;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.components.bootstrap.themes.sbadmin2.SB2ThemeClasses;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSClearfixOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSColoursOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSClearfixOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSColoursOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.moment.Moment;
 
 import java.util.Date;
