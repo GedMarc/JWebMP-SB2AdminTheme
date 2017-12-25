@@ -81,8 +81,6 @@ public class SB2LargeTile extends Div
 	 * 		The text under the title
 	 * @param footer
 	 * 		The footer to display
-	 * @param thiss
-	 * 		Placeholder so I could find the right constructor to link to xD
 	 */
 	public SB2LargeTile(ComponentHierarchyBase largeIcon, ComponentHierarchyBase title, ComponentHierarchyBase description, ComponentHierarchyBase footer)
 	{
