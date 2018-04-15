@@ -31,7 +31,8 @@ import java.util.Iterator;
  * @version 1.0
  * @since Oct 4, 2016
  */
-public class SB2NavbarTop extends Div
+public class SB2NavbarTop
+		extends Div
 {
 
 	private static final long serialVersionUID = 1L;
@@ -65,7 +66,7 @@ public class SB2NavbarTop extends Div
 	@Override
 	public void preConfigure()
 	{
-		if (this.rightHeader != null)
+		if (rightHeader != null)
 		{
 			for (Iterator iterator = rightHeader.getChildren()
 			                                    .iterator(); iterator.hasNext(); )

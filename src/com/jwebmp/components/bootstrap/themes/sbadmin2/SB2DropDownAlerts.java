@@ -38,7 +38,8 @@ import static com.jwebmp.utilities.StaticStrings.STRING_SPACE;
  * @version 1.0
  * @since Oct 4, 2016
  */
-public class SB2DropDownAlerts extends SB2DropDown
+public class SB2DropDownAlerts
+		extends SB2DropDown
 {
 
 	private static final long serialVersionUID = 1L;
@@ -128,7 +129,8 @@ public class SB2DropDownAlerts extends SB2DropDown
 			protected StringBuilder renderAfterTag()
 			{
 				StringBuilder sb = new StringBuilder();
-				sb.append(STRING_SPACE).append(message.getMessage());
+				sb.append(STRING_SPACE)
+				  .append(message.getMessage());
 				return sb;
 			}
 		};
