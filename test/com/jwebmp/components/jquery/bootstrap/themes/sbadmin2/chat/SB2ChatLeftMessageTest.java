@@ -16,7 +16,6 @@
  */
 package com.jwebmp.components.jquery.bootstrap.themes.sbadmin2.chat;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.components.bootstrap.themes.sbadmin2.chat.SB2ChatLeftMessage;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +25,7 @@ import java.util.Date;
  * @author GedMarc
  */
 public class SB2ChatLeftMessageTest
-		extends BaseTestClass
+
 {
 
 	public SB2ChatLeftMessageTest()

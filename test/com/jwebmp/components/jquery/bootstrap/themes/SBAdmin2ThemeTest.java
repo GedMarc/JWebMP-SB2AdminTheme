@@ -16,7 +16,6 @@
  */
 package com.jwebmp.components.jquery.bootstrap.themes;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.Page;
 import com.jwebmp.base.html.Body;
 import com.jwebmp.base.html.Comment;
@@ -27,7 +26,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class SBAdmin2ThemeTest
-		extends BaseTestClass
+
 {
 
 	public SBAdmin2ThemeTest()
@@ -39,7 +38,7 @@ public class SBAdmin2ThemeTest
 	public void testAddingThemeToBody()
 	{
 		SB2Theme theme = new SB2Theme();
-		Page p = getPage();
+		Page p = new Page();
 		Body b = p.getBody();
 		b.add(new Comment("Stuff"));
 		b.addTheme(theme);
@@ -53,7 +52,7 @@ public class SBAdmin2ThemeTest
 	public void testAddingThemeToAny()
 	{
 		SB2Theme theme = new SB2Theme();
-		Page p = getPage();
+		Page p = new Page();
 		Body b = p.getBody();
 		b.add(new Comment("Stuff"));
 		b.addTheme(theme);

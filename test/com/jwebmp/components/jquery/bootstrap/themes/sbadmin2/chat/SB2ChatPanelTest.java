@@ -16,7 +16,6 @@
  */
 package com.jwebmp.components.jquery.bootstrap.themes.sbadmin2.chat;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.base.html.Div;
 import com.jwebmp.components.bootstrap.themes.sbadmin2.chat.SB2ChatLeftMessage;
 import com.jwebmp.components.bootstrap.themes.sbadmin2.chat.SB2ChatPanel;
@@ -27,7 +26,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class SB2ChatPanelTest
-		extends BaseTestClass
+
 {
 
 	public SB2ChatPanelTest()
