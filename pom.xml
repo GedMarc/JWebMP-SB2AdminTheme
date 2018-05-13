@@ -4,7 +4,7 @@
 
     <groupId>com.jwebmp</groupId>
     <artifactId>jwebmp-sb2-admin-theme</artifactId>
-    <version>0.0.0_0</version>
+    <version>0.0.0_0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>SB2 Admin Theme</name>
