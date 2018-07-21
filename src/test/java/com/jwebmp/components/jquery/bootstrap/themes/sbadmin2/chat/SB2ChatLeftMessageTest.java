@@ -16,7 +16,7 @@
  */
 package com.jwebmp.components.jquery.bootstrap.themes.sbadmin2.chat;
 
-import com.jwebmp.components.bootstrap.themes.sbadmin2.chat.SB2ChatLeftMessage;
+import com.jwebmp.plugins.bootstrap.themes.sbadmin2.chat.SB2ChatLeftMessage;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;

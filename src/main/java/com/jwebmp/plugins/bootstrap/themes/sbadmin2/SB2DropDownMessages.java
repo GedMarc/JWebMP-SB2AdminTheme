@@ -14,18 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2;
 
-import com.jwebmp.base.html.Bold;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.ListItem;
-import com.jwebmp.base.servlets.enumarations.ComponentTypes;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.base.html.Bold;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.options.BSColoursOptions;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 import com.jwebmp.plugins.moment.Moment;
-import com.jwebmp.utilities.StaticStrings;
 
 import java.io.IOException;
 import java.net.URL;

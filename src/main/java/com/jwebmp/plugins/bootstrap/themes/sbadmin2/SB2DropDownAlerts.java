@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2;
 
-import com.jwebmp.base.html.*;
-import com.jwebmp.base.servlets.enumarations.ComponentTypes;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.base.html.*;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.bootstrap.options.BSColoursOptions;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 import com.jwebmp.plugins.moment.Moment;
@@ -28,7 +28,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * A shortcut class to building drop down message types

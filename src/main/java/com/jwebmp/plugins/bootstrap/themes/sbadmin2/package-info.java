@@ -14,17 +14,4 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2.chat;
-
-import com.jwebmp.base.html.interfaces.children.ListChildren;
-
-/**
- * Defines a component as a valid sb2 chat message
- *
- * @author GedMarc
- */
-public interface ISB2ChatMessage
-		extends ListChildren
-{
-
-}
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2;

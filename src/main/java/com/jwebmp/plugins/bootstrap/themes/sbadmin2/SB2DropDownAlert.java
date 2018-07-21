@@ -14,10 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.plugins.ComponentInformation;
+
+import java.util.Date;
 
 /**
  * A standard message display format from SB2 Admin Theme
@@ -26,27 +28,23 @@ import com.jwebmp.plugins.ComponentInformation;
  * @version 1.0
  * @since Oct 4, 2016
  */
-@ComponentInformation(name = "SB2 Drop Down Tasks",
-		description = "A shortcut to generating the tasks with progress bar drop downs",
+@ComponentInformation(name = "SB2 Drop Down Alert",
+		description = "A shortcut to generating the alerts drop down",
 		url = "https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/index.html")
-public class SB2DropDownTask
+public class SB2DropDownAlert
 		extends JavaScriptPart
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The name in bold
+	 * The icon in bold
 	 */
-	private String name;
+	private String icon;
 	/**
 	 * The message to display
 	 */
 	private String message;
 
-	/**
-	 * The percentage
-	 */
-	private double percentage;
 	/**
 	 * Any particular URL to point to
 	 */
@@ -55,43 +53,27 @@ public class SB2DropDownTask
 	 * Any applicable data field
 	 */
 	private String data;
+	/**
+	 * The moment date to use
+	 */
+	private Date date;
 
 	/**
 	 * Constructs a new standardized drop down message
 	 */
-	public SB2DropDownTask()
+	public SB2DropDownAlert()
 	{
 
 	}
 
 	/**
-	 * With just a name
+	 * With just a icon
 	 *
-	 * @param name
+	 * @param icon
 	 */
-	public SB2DropDownTask(String name)
+	public SB2DropDownAlert(String icon)
 	{
-		this.name = name;
-	}
-
-	/**
-	 * Returns the given percentage for this guy
-	 *
-	 * @return
-	 */
-	public double getPercentage()
-	{
-		return percentage;
-	}
-
-	/**
-	 * Sets a given percentage for this guy
-	 *
-	 * @param percentage
-	 */
-	public void setPercentage(double percentage)
-	{
-		this.percentage = percentage;
+		this.icon = icon;
 	}
 
 	/**
@@ -99,19 +81,19 @@ public class SB2DropDownTask
 	 *
 	 * @return
 	 */
-	public String getName()
+	public String getIcon()
 	{
-		return name;
+		return icon;
 	}
 
 	/**
-	 * Sets the name
+	 * Sets the icon
 	 *
-	 * @param name
+	 * @param icon
 	 */
-	public void setName(String name)
+	public void setIcon(String icon)
 	{
-		this.name = name;
+		this.icon = icon;
 	}
 
 	/**
@@ -173,4 +155,25 @@ public class SB2DropDownTask
 	{
 		this.data = data;
 	}
+
+	/**
+	 * Gets the date
+	 *
+	 * @return
+	 */
+	public Date getDate()
+	{
+		return date;
+	}
+
+	/**
+	 * Sets the date
+	 *
+	 * @param date
+	 */
+	public void setDate(Date date)
+	{
+		this.date = date;
+	}
+
 }

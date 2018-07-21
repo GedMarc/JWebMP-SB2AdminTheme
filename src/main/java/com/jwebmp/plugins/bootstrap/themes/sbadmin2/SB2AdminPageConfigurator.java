@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2;
 
-import com.jwebmp.Page;
-import com.jwebmp.PageConfigurator;
-import com.jwebmp.plugins.PluginInformation;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.PageConfigurator;
+import com.jwebmp.core.plugins.PluginInformation;
 
 /**
  * @author GedMarc

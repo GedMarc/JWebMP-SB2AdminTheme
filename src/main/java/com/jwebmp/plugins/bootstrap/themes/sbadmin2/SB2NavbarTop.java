@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.ListItem;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.ListItem;
 
 import java.util.Iterator;
 

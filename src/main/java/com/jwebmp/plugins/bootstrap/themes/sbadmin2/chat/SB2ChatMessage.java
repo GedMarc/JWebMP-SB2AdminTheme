@@ -14,4 +14,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2.chat;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2.chat;
+
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+
+/**
+ * @author GedMarc
+ * @version 1.0
+ * @since Oct 11, 2016
+ */
+public class SB2ChatMessage
+		extends JavaScriptPart
+{
+
+	private static final long serialVersionUID = 1L;
+
+	public SB2ChatMessage()
+	{
+		//Nothing Needed
+	}
+
+}

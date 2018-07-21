@@ -14,15 +14,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2.chat;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2.chat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.jwebmp.base.html.*;
-import com.jwebmp.base.servlets.enumarations.ComponentTypes;
-import com.jwebmp.components.bootstrap.themes.sbadmin2.SB2ThemeClasses;
+import com.jwebmp.core.base.html.*;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 import com.jwebmp.plugins.bootstrap.options.BSClearfixOptions;
 import com.jwebmp.plugins.bootstrap.options.BSColoursOptions;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
+import com.jwebmp.plugins.bootstrap.themes.sbadmin2.SB2ThemeClasses;
 import com.jwebmp.plugins.moment.Moment;
 
 import java.util.Date;
@@ -34,7 +34,7 @@ import java.util.Date;
  * @version 1.0
  * @since Oct 17, 2016
  */
-public class SB2ChatLeftMessage
+public class SB2ChatRightMessage
 		extends ListItem
 		implements ISB2ChatMessage
 {
@@ -64,9 +64,9 @@ public class SB2ChatLeftMessage
 	/**
 	 * A Chat message that is left aligned
 	 */
-	public SB2ChatLeftMessage()
+	public SB2ChatRightMessage()
 	{
-		addClass(BSDefaultOptions.Left);
+		addClass(BSDefaultOptions.Right);
 		addClass(BSClearfixOptions.Clearfix);
 	}
 
@@ -76,19 +76,21 @@ public class SB2ChatLeftMessage
 		if (!isConfigured())
 		{
 			getMessageImageSpan().add(getMessageImage());
+			getMessageImageSpan().addClass(BSDefaultOptions.Pull_Right);
 			add(getMessageImageSpan());
 
 			Strong headerStrong = new Strong(headerText);
 			headerStrong.addClass(BSDefaultOptions.Primary_Font);
+			headerStrong.addClass(BSDefaultOptions.Pull_Right);
 
-			getChatBodyHeader().add(headerStrong);
 			SmallText st = new SmallText();
 			Moment m = new Moment(messageDate, ComponentTypes.Span);
-			st.addClass(BSDefaultOptions.Pull_Right);
 			st.addClass(BSColoursOptions.Text_Muted);
+
 			st.add(m);
 
 			getChatBodyHeader().add(st);
+			getChatBodyHeader().add(headerStrong);
 
 			getChatBody().add(message);
 
@@ -105,7 +107,7 @@ public class SB2ChatLeftMessage
 		{
 			return true;
 		}
-		if (!(o instanceof SB2ChatLeftMessage))
+		if (!(o instanceof SB2ChatRightMessage))
 		{
 			return false;
 		}
@@ -114,7 +116,7 @@ public class SB2ChatLeftMessage
 			return false;
 		}
 
-		SB2ChatLeftMessage that = (SB2ChatLeftMessage) o;
+		SB2ChatRightMessage that = (SB2ChatRightMessage) o;
 
 		if (getHeaderText() != null ? !getHeaderText().equals(that.getHeaderText()) : that.getHeaderText() != null)
 		{
@@ -304,7 +306,7 @@ public class SB2ChatLeftMessage
 		if (this.messageImageSpan != null)
 		{
 			this.messageImageSpan.addClass(SB2ThemeClasses.Chat_Img);
-			this.messageImageSpan.addClass(BSDefaultOptions.Pull_Left);
+			this.messageImageSpan.addClass(BSDefaultOptions.Pull_Right);
 		}
 	}
 

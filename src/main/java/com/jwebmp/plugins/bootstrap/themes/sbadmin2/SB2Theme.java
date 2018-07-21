@@ -14,24 +14,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2.chat;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.css.themes.Theme;
 
 /**
+ * The Bootstrap SB Admin 2 Theme
+ *
  * @author GedMarc
- * @version 1.0
- * @since Oct 11, 2016
+ * @since 21 May 2016
  */
-public class SB2ChatMessage
-		extends JavaScriptPart
+public class SB2Theme
+		extends Theme
 {
 
 	private static final long serialVersionUID = 1L;
 
-	public SB2ChatMessage()
+	public SB2Theme()
 	{
-		//Nothing Needed
+		super("SBAdmin2", "");
+		//default to sb2 admin theme?
+		getCssReferences().add(SB2BootstrapReferencePool.BootstrapSBAdmin2Reference.getCssReference());
+		getCssReferences().add(SB2BootstrapReferencePool.BootstrapSocialThemeReference.getCssReference());
 	}
 
 }

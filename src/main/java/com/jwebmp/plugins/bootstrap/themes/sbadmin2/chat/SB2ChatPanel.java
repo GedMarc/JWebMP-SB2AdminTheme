@@ -14,14 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2.chat;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2.chat;
 
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.attributes.NoAttributes;
-import com.jwebmp.base.html.interfaces.events.GlobalEvents;
-import com.jwebmp.components.bootstrap.themes.sbadmin2.SB2DropDown;
-import com.jwebmp.components.bootstrap.themes.sbadmin2.SB2ThemeClasses;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 import com.jwebmp.plugins.bootstrap.panel.BSPanelDefault;
+import com.jwebmp.plugins.bootstrap.themes.sbadmin2.SB2DropDown;
+import com.jwebmp.plugins.bootstrap.themes.sbadmin2.SB2ThemeClasses;
 
 /**
  * The default chat panel that takes chat message types

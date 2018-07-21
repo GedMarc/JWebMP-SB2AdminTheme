@@ -14,19 +14,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.html.Button;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.ListItem;
-import com.jwebmp.base.html.attributes.ButtonAttributes;
-import com.jwebmp.base.html.attributes.LinkAttributes;
-import com.jwebmp.htmlbuilder.css.lists.ListCSS;
-import com.jwebmp.htmlbuilder.css.lists.ListStyleType;
-import com.jwebmp.plugins.ComponentInformation;
-import com.jwebmp.utilities.StaticStrings;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.html.Button;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.html.attributes.ButtonAttributes;
+import com.jwebmp.core.base.html.attributes.LinkAttributes;
+import com.jwebmp.core.htmlbuilder.css.lists.ListCSS;
+import com.jwebmp.core.htmlbuilder.css.lists.ListStyleType;
+import com.jwebmp.core.plugins.ComponentInformation;
+import com.jwebmp.core.utilities.StaticStrings;
 
 /**
  * A drop down list item for the top nav bar. Comes out as an icon

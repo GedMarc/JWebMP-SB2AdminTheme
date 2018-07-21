@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.jwebmp.base.interfaces.ICSSClassName;
-import com.jwebmp.utilities.StaticStrings;
+import com.jwebmp.core.base.interfaces.ICSSClassName;
+import com.jwebmp.core.utilities.StaticStrings;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * A list of all the classes with SB Admin 2 theme https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/index.html

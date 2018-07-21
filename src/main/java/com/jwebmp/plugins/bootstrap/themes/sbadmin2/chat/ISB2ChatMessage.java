@@ -14,28 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.components.bootstrap.themes.sbadmin2;
+package com.jwebmp.plugins.bootstrap.themes.sbadmin2.chat;
 
-import com.jwebmp.htmlbuilder.css.themes.Theme;
+import com.jwebmp.core.base.html.interfaces.children.ListChildren;
 
 /**
- * The Bootstrap SB Admin 2 Theme
+ * Defines a component as a valid sb2 chat message
  *
  * @author GedMarc
- * @since 21 May 2016
  */
-public class SB2Theme
-		extends Theme
+public interface ISB2ChatMessage
+		extends ListChildren
 {
-
-	private static final long serialVersionUID = 1L;
-
-	public SB2Theme()
-	{
-		super("SBAdmin2", "");
-		//default to sb2 admin theme?
-		getCssReferences().add(SB2BootstrapReferencePool.BootstrapSBAdmin2Reference.getCssReference());
-		getCssReferences().add(SB2BootstrapReferencePool.BootstrapSocialThemeReference.getCssReference());
-	}
 
 }

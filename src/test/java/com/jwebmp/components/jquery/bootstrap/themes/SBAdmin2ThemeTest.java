@@ -16,10 +16,10 @@
  */
 package com.jwebmp.components.jquery.bootstrap.themes;
 
-import com.jwebmp.Page;
-import com.jwebmp.base.html.Body;
-import com.jwebmp.base.html.Comment;
-import com.jwebmp.components.bootstrap.themes.sbadmin2.SB2Theme;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.base.html.Body;
+import com.jwebmp.core.base.html.Comment;
+import com.jwebmp.plugins.bootstrap.themes.sbadmin2.SB2Theme;
 import org.junit.jupiter.api.Test;
 
 /**
