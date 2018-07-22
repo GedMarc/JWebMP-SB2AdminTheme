@@ -1,7 +1,7 @@
 module com.jwebmp.components.bootstrap.themes.sbadmin2 {
 
-	exports com.jwebmp.components.bootstrap.themes.sbadmin2;
-	exports com.jwebmp.components.bootstrap.themes.sbadmin2.chat;
+	exports com.jwebmp.plugins.bootstrap.themes.sbadmin2;
+	exports com.jwebmp.plugins.bootstrap.themes.sbadmin2.chat;
 
 	requires com.jwebmp.core;
 	requires com.jwebmp.logmaster;
