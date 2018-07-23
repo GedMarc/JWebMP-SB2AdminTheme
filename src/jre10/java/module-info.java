@@ -1,3 +1,6 @@
+import com.jwebmp.core.services.IPageConfigurator;
+import com.jwebmp.plugins.bootstrap.themes.sbadmin2.SB2AdminPageConfigurator;
+
 module com.jwebmp.components.bootstrap.themes.sbadmin2 {
 
 	exports com.jwebmp.plugins.bootstrap.themes.sbadmin2;
@@ -11,4 +14,7 @@ module com.jwebmp.components.bootstrap.themes.sbadmin2 {
 	requires java.logging;
 	requires com.jwebmp.plugins.bootstrap;
 	requires com.jwebmp.plugins.moment;
+
+	provides IPageConfigurator with SB2AdminPageConfigurator;
+
 }
