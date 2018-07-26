@@ -16,5 +16,6 @@ module com.jwebmp.components.bootstrap.themes.sbadmin2 {
 	requires com.jwebmp.plugins.moment;
 
 	provides IPageConfigurator with SB2AdminPageConfigurator;
-
+	opens com.jwebmp.plugins.bootstrap.themes.sbadmin2 to com.fasterxml.jackson.databind,com.jwebmp.core;
+	opens com.jwebmp.plugins.bootstrap.themes.sbadmin2.chat to com.fasterxml.jackson.databind,com.jwebmp.core;
 }
