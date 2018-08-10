@@ -17,7 +17,7 @@
 package com.jwebmp.plugins.bootstrap.themes.sbadmin2;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.jwebmp.core.base.interfaces.ICSSClassName;
+import com.jwebmp.core.base.interfaces.ICssClassName;
 import com.jwebmp.core.utilities.StaticStrings;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
@@ -30,7 +30,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since Oct 3, 2016
  */
 public enum SB2ThemeClasses
-		implements ICSSClassName
+		implements ICssClassName
 {
 	Panel,
 	Panel_Default,
