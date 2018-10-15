@@ -33,8 +33,8 @@ import javax.validation.constraints.NotNull;
 		pluginCategories = "bootstrap,themes, admin",
 		pluginSubtitle = "A Bootstrap admin theme, dashboard, or web app UI featuring powerful jQuery plugins for extended functionality.",
 		pluginGitUrl = "https://github.com/BlackrockDigital/startbootstrap-sb-admin-2",
-		pluginSourceUrl = "https://github.com/GedMarc/JWebSwing-SB2AdminTheme",
-		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-SB2AdminTheme",
+		pluginSourceUrl = "https://github.com/GedMarc/JWebMP-SB2AdminTheme",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-SB2AdminTheme",
 		pluginOriginalHomepage = "https://startbootstrap.com/template-overviews/sb-admin-2/",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/SB2AdminTheme.jar/download",
 		pluginIconUrl = "startbootstrap-sb-admin-2/icon.png",
@@ -42,7 +42,7 @@ import javax.validation.constraints.NotNull;
 		pluginLastUpdatedDate = "2017/03/04"
 )
 public class SB2AdminPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<SB2AdminPageConfigurator>
 {
 	/**
 	 * If this configurator is enabled
