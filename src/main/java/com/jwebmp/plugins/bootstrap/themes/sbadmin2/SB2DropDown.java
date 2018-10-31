@@ -43,7 +43,6 @@ public class SB2DropDown
 		extends ListItem
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private Component dropDownComponent;
 	private List dropDownContents;
@@ -100,6 +99,12 @@ public class SB2DropDown
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -118,12 +123,6 @@ public class SB2DropDown
 		SB2DropDown that = (SB2DropDown) o;
 
 		return getDropDownComponent().equals(that.getDropDownComponent()) && getDropDownContents().equals(that.getDropDownContents());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return super.hashCode();
 	}
 
 	/**

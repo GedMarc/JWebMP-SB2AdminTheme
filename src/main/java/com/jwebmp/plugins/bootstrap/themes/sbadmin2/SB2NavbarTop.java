@@ -35,7 +35,7 @@ public class SB2NavbarTop
 		extends Div
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private Component leftHeader;
 	private List rightHeader;
 
@@ -80,6 +80,15 @@ public class SB2NavbarTop
 			}
 		}
 		super.preConfigure();
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getLeftHeader() != null ? getLeftHeader().hashCode() : 0);
+		result = 31 * result + (getRightHeader() != null ? getRightHeader().hashCode() : 0);
+		return result;
 	}
 
 	@Override
@@ -159,14 +168,5 @@ public class SB2NavbarTop
 			rightHeader.addClass(SB2ThemeClasses.Navbar_Right);
 			getChildren().add(this.rightHeader);
 		}
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int result = super.hashCode();
-		result = 31 * result + (getLeftHeader() != null ? getLeftHeader().hashCode() : 0);
-		result = 31 * result + (getRightHeader() != null ? getRightHeader().hashCode() : 0);
-		return result;
 	}
 }

@@ -39,7 +39,7 @@ public class SB2ChatRightMessage
 		implements ISB2ChatMessage
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The actual header text
 	 */
@@ -98,6 +98,20 @@ public class SB2ChatRightMessage
 		}
 
 		super.preConfigure();
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getHeaderText() != null ? getHeaderText().hashCode() : 0);
+		result = 31 * result + (getMessageDate() != null ? getMessageDate().hashCode() : 0);
+		result = 31 * result + (getMessage() != null ? getMessage().hashCode() : 0);
+		result = 31 * result + (getMessageImageSpan() != null ? getMessageImageSpan().hashCode() : 0);
+		result = 31 * result + (getMessageImage() != null ? getMessageImage().hashCode() : 0);
+		result = 31 * result + getChatBody().hashCode();
+		result = 31 * result + getChatBodyHeader().hashCode();
+		return result;
 	}
 
 	@Override
@@ -216,7 +230,7 @@ public class SB2ChatRightMessage
 	 */
 	public Image getMessageImage()
 	{
-		if (this.messageImage == null)
+		if (messageImage == null)
 		{
 			setMessageImage(new Image(""));
 		}
@@ -318,19 +332,5 @@ public class SB2ChatRightMessage
 	public void setMessage(String message)
 	{
 		this.message = message;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int result = super.hashCode();
-		result = 31 * result + (getHeaderText() != null ? getHeaderText().hashCode() : 0);
-		result = 31 * result + (getMessageDate() != null ? getMessageDate().hashCode() : 0);
-		result = 31 * result + (getMessage() != null ? getMessage().hashCode() : 0);
-		result = 31 * result + (getMessageImageSpan() != null ? getMessageImageSpan().hashCode() : 0);
-		result = 31 * result + (getMessageImage() != null ? getMessageImage().hashCode() : 0);
-		result = 31 * result + getChatBody().hashCode();
-		result = 31 * result + getChatBodyHeader().hashCode();
-		return result;
 	}
 }

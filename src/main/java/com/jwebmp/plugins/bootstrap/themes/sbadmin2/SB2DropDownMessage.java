@@ -35,7 +35,7 @@ public class SB2DropDownMessage
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The name in bold
 	 */
@@ -86,7 +86,7 @@ public class SB2DropDownMessage
 	{
 		this.name = name;
 		this.message = message;
-		this.date = dateFormat;
+		date = dateFormat;
 	}
 
 	/**

@@ -27,7 +27,6 @@ public class SB2ChatMessage
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public SB2ChatMessage()
 	{

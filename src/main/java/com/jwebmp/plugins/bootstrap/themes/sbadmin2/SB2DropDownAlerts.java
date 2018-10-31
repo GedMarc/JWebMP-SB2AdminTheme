@@ -41,7 +41,6 @@ public class SB2DropDownAlerts
 		extends SB2DropDown
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private java.util.List<SB2DropDownAlert> messages;
 
@@ -122,7 +121,7 @@ public class SB2DropDownAlerts
 	{
 		Italic i = new Italic()
 		{
-			private static final long serialVersionUID = 1L;
+
 
 			@Override
 			protected StringBuilder renderAfterTag()

@@ -43,7 +43,6 @@ public class SB2DropDownMessages
 		extends SB2DropDown
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private List<SB2DropDownMessage> messages;
 

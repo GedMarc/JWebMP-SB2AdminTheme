@@ -38,7 +38,6 @@ public class SB2DropDownTasks
 		extends SB2DropDown
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private java.util.List<SB2DropDownTask> messages;
 

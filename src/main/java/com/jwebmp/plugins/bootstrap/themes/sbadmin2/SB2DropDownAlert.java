@@ -35,7 +35,7 @@ public class SB2DropDownAlert
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The icon in bold
 	 */

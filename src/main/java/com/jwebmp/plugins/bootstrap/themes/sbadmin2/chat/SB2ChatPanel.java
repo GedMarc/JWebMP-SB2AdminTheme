@@ -34,7 +34,6 @@ public class SB2ChatPanel
 		extends BSPanelDefault
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The drop down menu in the header bar
@@ -69,6 +68,15 @@ public class SB2ChatPanel
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getDropDownMenu().hashCode();
+		result = 31 * result + getChatList().hashCode();
+		return result;
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -91,15 +99,6 @@ public class SB2ChatPanel
 			return false;
 		}
 		return getChatList().equals(that.getChatList());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int result = super.hashCode();
-		result = 31 * result + getDropDownMenu().hashCode();
-		result = 31 * result + getChatList().hashCode();
-		return result;
 	}
 
 	/**

@@ -39,7 +39,6 @@ public class SB2LargeTile
 		extends Div
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private ComponentHierarchyBase description;
 	private ComponentHierarchyBase footer;
@@ -121,16 +120,16 @@ public class SB2LargeTile
 			rightSide.addClass("col-xs-9");
 
 			BSRow headerRow = new BSRow();
-			if (this.icon != null)
+			if (icon != null)
 			{
 				Div iconDiv = new Div();
 				iconDiv.addClass("col-xs-3");
-				iconDiv.add(this.icon);
+				iconDiv.add(icon);
 				iconDiv.addClass("pull-left");
 				headerRow.add(iconDiv);
 			}
 
-			if (this.title != null)
+			if (title != null)
 			{
 				Div iconDiv = new Div();
 				iconDiv.addClass("col-xs-12");
@@ -283,7 +282,21 @@ public class SB2LargeTile
 	 */
 	public void setLargeIcon(ComponentHierarchyBase largeIcon)
 	{
-		this.icon = largeIcon;
+		icon = largeIcon;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getDescription().hashCode();
+		result = 31 * result + getFooter().hashCode();
+		result = 31 * result + getPanel().hashCode();
+		result = 31 * result + (getFooterText() != null ? getFooterText().hashCode() : 0);
+		result = 31 * result + (getFooterGoIcon() != null ? getFooterGoIcon().hashCode() : 0);
+		result = 31 * result + getIcon().hashCode();
+		result = 31 * result + getTitle().hashCode();
+		return result;
 	}
 
 	@Override
@@ -417,19 +430,5 @@ public class SB2LargeTile
 	public final void setIcon(ComponentHierarchyBase icon)
 	{
 		this.icon = icon;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int result = super.hashCode();
-		result = 31 * result + getDescription().hashCode();
-		result = 31 * result + getFooter().hashCode();
-		result = 31 * result + getPanel().hashCode();
-		result = 31 * result + (getFooterText() != null ? getFooterText().hashCode() : 0);
-		result = 31 * result + (getFooterGoIcon() != null ? getFooterGoIcon().hashCode() : 0);
-		result = 31 * result + getIcon().hashCode();
-		result = 31 * result + getTitle().hashCode();
-		return result;
 	}
 }

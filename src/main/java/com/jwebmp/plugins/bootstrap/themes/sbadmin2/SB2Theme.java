@@ -28,7 +28,6 @@ public class SB2Theme
 		extends Theme
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public SB2Theme()
 	{
